@@ -37,3 +37,4 @@
 
 # ENV DATA
 config/local_env.yml
+.env
