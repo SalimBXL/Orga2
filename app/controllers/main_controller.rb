@@ -1,7 +1,9 @@
 class MainController < ApplicationController 
-    def Index
-
+    def index
         @user = current_user
+    end
+
+    def show
     end
 
     private

@@ -12,9 +12,10 @@ Rails.application.routes.draw do
   resource :password_reset
   resource :password
 
+  get "dashboard" => "main#show"
+
   
-
-
   # Defines the root path route ("/")
   root "main#index"
+
 end

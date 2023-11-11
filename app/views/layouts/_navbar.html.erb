@@ -1,0 +1,69 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="javascript:void(0)">Orga2</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>        
+        <div class="collapse navbar-collapse" id="mynavbar">
+            <div class="me-auto navbar-nav">
+                <% if user_signed_in? %>
+                    <ul class="navbar-nav ">
+                        <li class="nav-item"><a 
+                        class="nav-link" 
+                        href="javascript:void(0)">
+                        HOME
+                        </a>
+                        </li>
+                        <li class="nav-item"><a 
+                        class="nav-link" 
+                        href="javascript:void(0)">
+                        Today
+                        </a>
+                        </li>
+                        <li class="nav-item"><a 
+                        class="nav-link" 
+                        href="javascript:void(0)">
+                        Week
+                        </a>
+                        </li>
+
+                        <li class="nav-item"><a 
+                        class="nav-link" 
+                        href="javascript:void(0)">
+                        Month
+                        </a>
+                        </li>
+                    </ul>
+                    
+                    <div class="navbar-nav">
+                        <% if user_signed_in? %>
+                            <%# <%= link_to "Edit Password", 
+                            edit_password_path,
+                            class: "btn btn-info rm-2" 
+                            %> %>
+                            <%# <%= link_to "#{current_user.firstname} #{current_user.lastname}", 
+                            edit_password_path,
+                            class: "btn btn-info" if current_user.present?
+                            %> %>
+                        <% else %>
+                            <%# <%= link_to "Sign Up", new_registration_path %> %>
+                        <% end %>
+                    </div>
+                <% end %>    
+            </div>
+            
+            <div class="d-flex">
+                <%= link_to "Login", 
+                    new_session_path, 
+                    class: "btn btn-success" unless current_user.present?
+                %>
+
+                <%= button_to "Log Out", 
+                    session_path, 
+                    method: :delete,
+                    class: "btn btn-danger" if current_user.present?
+                %>
+            </div>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,8 @@
+<% if current_user.present? %>
+    <div class="container mt-3 ">
+        <div class="mt-4 p-5 rounded-3 jumbotron">
+            <h1>ORGA</h1> 
+            <p>Welcome <%= current_user.firstname %></p> 
+        </div>
+    </div>
+<% end %>

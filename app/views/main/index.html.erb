@@ -1,13 +1,15 @@
-<h1>Homepage</h1>
-
-
-<% if current_user.present? %>
-    <div>
-        <h2>Your Informations</h2>
-        <h3>
-            <%= current_user.firstname %>
-            <%= current_user.lastname.upcase %>
-        </h3>
-        <div>Email : <%= current_user.email %></div>
+<% unless current_user.present? %>
+    <div class="d-flex flex-row m-5">
+        <%= image_tag(
+            "logo.png",
+            width: "25%",
+            height: "25%",
+            class: "img-fluid",
+            )
+        %>
+        <div class="m-3">
+            <h1>ORGA</h1>
+            <p>Team Management</p>
+        </div>
     </div>
 <% end %>
