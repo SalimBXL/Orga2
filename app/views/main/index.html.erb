@@ -1,1 +1,13 @@
 <h1>Homepage</h1>
+
+
+<% if current_user.present? %>
+    <div>
+        <h2>Your Informations</h2>
+        <h3>
+            <%= current_user.firstname %>
+            <%= current_user.lastname.upcase %>
+        </h3>
+        <div>Email : <%= current_user.email %></div>
+    </div>
+<% end %>
