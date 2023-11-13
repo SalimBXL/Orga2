@@ -1,0 +1,52 @@
+
+<% indexSemaineAnnee = 0 %>
+
+<% dateJour = @firstDayOfCalendar %>
+
+<%# YEAR %>
+<div class="d-flex flex-row justify-content-center">
+    <% 12.times do |indexMonth| %>
+        <% indexMonth += 1 %>
+
+        <%# MONTH %>
+        <div class="d-flex flex-column">
+            <div><%= indexMonth %></div>
+            <div class="d-flex flex-row">
+                <% 4.times do |indexSemaine| %>
+                    <% indexSemaine += 1 %>
+                    <% indexSemaineAnnee += 1 %>
+
+                    <%# WEEK %>
+                    <div class="d-flex flex-column align-items-start">
+                        <div class="text-secondary">
+                            <% indexSemaineAnnee %>
+                        </div>
+                        <% 7.times do |indexJour| %>
+                            <% indexJour += 1 %>
+
+                            <%# DAY %>
+                            <% if dateJour.saturday? || dateJour.sunday? %>
+                                <% bgColor = "lightgrey" %>
+                            <% else %>
+                                <% bgColor = "white" %>
+                            <% end %>
+                            <div 
+                                class="align-content-center 
+                                    border
+                                    heatmap-cell-width"
+                                style="background-color: <%= bgColor %>"        
+                                >
+                            </div>
+
+                            <% dateJour = dateJour + 1.day %>
+                        <% end %>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    <% end %>
+</div>
+
+
+
+

@@ -20,3 +20,44 @@
    background-color: antiquewhite;
    color: grey;
  }
+
+ .heatmap-cell-width {
+  text-align: center;
+  font-size: xx-small;
+ }
+
+ @media screen and (max-width: 576px) {
+    .heatmap-cell-width {
+        width: 7px; height: 7px;  /* MOBILE   */
+    }
+ }
+
+ @media screen and (min-width: 576px) {
+  .heatmap-cell-width {
+      width: 10px; height: 10px;  /* MOBILE   */
+  }
+}
+
+ @media screen and (min-width: 768px) {
+  .heatmap-cell-width {
+      width: 14px; height: 14px;  /* MOBILE   */
+  }
+}
+
+ @media screen and (min-width: 992px) {
+  .heatmap-cell-width {
+      width: 18px; height: 18px;  /* TABLETTE   */
+  }
+ }
+  @media screen and (min-width: 1200px) {
+    .heatmap-cell-width {
+        width: 22px; height: 22px;  /* TABLETTE   */
+    }
+}
+
+@media screen and (min-width: 1400px) {
+  .heatmap-cell-width {
+      width: 26px; height: 26px;  /* TABLETTE   */
+  }
+}
+

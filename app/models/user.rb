@@ -5,10 +5,10 @@ class User < ApplicationRecord
     normalizes :email, with: ->(email) {email.strip.downcase}
 
     validates :firstname, presence: true
-    normalizes :firstname, with: ->(firstname) {firstname.strip.capitalize}
+    normalizes :firstname, with: ->(firstname) {firstname.strip.titleize}
 
     validates :lastname, presence: true
-    normalizes :lastname, with: ->(lastname) {lastname.strip.capitalize}
+    normalizes :lastname, with: ->(lastname) {lastname.strip.titleize}
 
     generates_token_for :password_reset, expires_in: 15.minutes do
         password_salt&.last(10)

@@ -7,3 +7,14 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+
+# Création du profil Admin
+User.create(
+    email: "anthony.joly@hubruxelles.be",
+    firstname: "Salim a.",
+    lastname: "Joly",
+    password: "password",
+    password_confirmation: "password"
+)
+
