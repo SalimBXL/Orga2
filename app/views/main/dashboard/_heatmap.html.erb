@@ -1,18 +1,23 @@
 
-<% indexSemaineAnnee = 0 %>
-
-<% dateJour = @firstDayOfCalendar %>
 
 <%# YEAR %>
-<div class="d-flex flex-row justify-content-center">
+<div class="d-flex flex-row justify-content-center mb-5">
+    <% indexSemaineAnnee = 0 %>
+    <% dateJour = @firstDayOfCalendar %>
+
     <% 12.times do |indexMonth| %>
         <% indexMonth += 1 %>
 
         <%# MONTH %>
-        <div class="d-flex flex-column">
-            <div><%= indexMonth %></div>
+        <% nomMois = (dateJour + 15.days).strftime("%b") %>
+        <% nombreSemainesDansMois = (dateJour.end_of_month.strftime("%W").to_i) - (dateJour.beginning_of_month.strftime("%W").to_i) %>
+
+        <div class="d-flex flex-column me-1">
+            <div><%= nomMois %></div>
+
             <div class="d-flex flex-row">
-                <% 4.times do |indexSemaine| %>
+
+                <% nombreSemainesDansMois.times do |indexSemaine| %>
                     <% indexSemaine += 1 %>
                     <% indexSemaineAnnee += 1 %>
 
@@ -28,7 +33,12 @@
                             <% if dateJour.saturday? || dateJour.sunday? %>
                                 <% bgColor = "lightgrey" %>
                             <% else %>
-                                <% bgColor = "white" %>
+                                <% dateJourFormated = dateJour.strftime("%Y-%m-%d") %>
+                                <% if @data[dateJourFormated] %>
+                                    <% bgColor = getHeatMapColor(@data[dateJourFormated]) %>
+                                <% else %>
+                                    <% bgColor = "white" %>
+                                <% end %>
                             <% end %>
                             <div 
                                 class="align-content-center 
@@ -36,6 +46,7 @@
                                     heatmap-cell-width"
                                 style="background-color: <%= bgColor %>"        
                                 >
+                                <%= dateJour.day %>
                             </div>
 
                             <% dateJour = dateJour + 1.day %>
@@ -46,7 +57,3 @@
         </div>
     <% end %>
 </div>
-
-
-
-
