@@ -1,6 +1,13 @@
 <% if current_user.present? %>
     <div class="container">
-        <div class="mt-2 p-5 rounded-3 jumbotron">
+        <div class="mt-2 p-5 rounded-3 jumbotron dashboard-header">
+            <%= image_tag(
+                "logo.png",
+                width: "64px",
+                
+                class: "img-fluid",
+                )
+            %>
             <h1>ORGA</h1> 
             <p>Welcome <%= current_user.firstname %></p> 
         </div>

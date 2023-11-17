@@ -14,12 +14,37 @@
  *= require_self
  */
 
+ body {
+  margin: 0;
+ }
+
+ footer {
+  background-color: rgb(40, 40, 40);
+  color: white;
+  text-align: center;
+  font-size: small;
+ }
+
+ small {
+  font-size: x-small;
+ }
+
+ 
+
+ .dashboard-header {
+  display: flexbox;
+  flex-direction: row;
+  align-items: flex-start;
+  align-content: flex-start;
+ }
+
  .jumbotron {
    background: url("assets/logo2.png") no-repeat;
    background-size: cover;
    background-color: antiquewhite;
    color: grey;
  }
+
 
  .heatmap-cell-width {
   text-align: center;

@@ -1,0 +1,48 @@
+<div class="card mb-5">
+    <div class="card-body">
+        <h3>My Week</h3>
+
+        <% pas = 100.0 / 6 %>
+        <div class="progress border">
+            <% 6.times do |indexJour| %>
+                <% indexJour += 1 %>
+                <% indexJourSTR = indexJour.to_s %>
+                
+                <!-- Jour normal de semaine -->
+                <% if (indexJour > 0 && indexJour < 6) %>
+                    <% bgclr = ["light", "dark"] %>
+                    <% bgclr = ["primary", "light"] if @myWeek[indexJourSTR][:job][:ampm] %>
+                    <% bgclr = ["info", "light"] unless @myWeek[indexJourSTR][:job][:ampm] %>
+                    <% bgclr = ["success", "light"] if (!@myWeek[indexJourSTR][:absence][:code].empty? && @myWeek[indexJourSTR][:absence][:valide]) %>
+                    <% bgclr = ["success", "danger"] if (!@myWeek[indexJourSTR][:absence][:code].empty? && !@myWeek[indexJourSTR][:absence][:valide]) %>
+
+                    <% textLabel = @myWeek[indexJourSTR][:job][:code] %>
+                    <% textLabel = "#{textLabel} (#{@myWeek[indexJourSTR][:absence][:code]})" if !@myWeek[indexJourSTR][:absence][:code].empty? %>
+
+                    <div 
+                        class="progress-bar bg-<%= bgclr[0] %> text-<%= bgclr[1] %>" 
+                        style="width:<%= pas %>%" 
+                        data-bs-toggle="tooltip" 
+                        title="<%= textLabel %>">
+                        <%= textLabel %>
+                    </div>
+                <% end %>
+
+                
+
+                <!-- Jour de weekend -->
+                <% if (indexJour == 6 || indexJour == 0) %>
+                    <div class="progress-bar bg-secondary text-light" style="width:<%= pas %>%">
+                        <%= @myWeek["6"][:job][:code] %>
+                    </div>
+                <% end %>
+            <% end %>
+        </div>
+    </div>
+
+
+
+    <div class="card-image-bottom">
+        
+    </div>
+</div>
