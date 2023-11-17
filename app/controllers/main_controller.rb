@@ -9,9 +9,18 @@ class MainController < ApplicationController
         delta = -1 if (dayOfWeek < 1)
         delta = 0 if (dayOfWeek == 1)
         delta = (dayOfWeek - 1) if (dayOfWeek > 1)
-        @firstDayOfCalendar = firstDayOfTheYear - delta.days 
+        @firstDayOfCalendar = firstDayOfTheYear - delta.days
 
-        data = {
+        
+        dataWeek = {
+            "1": { job: { code: "5", ampm: true }, absence: { code: "", valide: false } },
+            "2": { job: { code: "M", ampm: true }, absence: { code: "ma", valide: false } },
+            "3": { job: { code: "", ampm: true }, absence: { code: "co", valide: true } },
+            "4": { job: { code: "", ampm: true }, absence: { code: "co", valide: false } },
+            "5": { job: { code: "FDG2", ampm: false }, absence: { code: "", valide: false } },
+            "6": { job: { code: "", ampm: true }, absence: { code: "", valide: false } }
+        }
+        dataYear = {
             "2023-01-19": { 
                 date: "2023-01-19", 
                 job: {
@@ -57,7 +66,8 @@ class MainController < ApplicationController
                 }
             }
         }
-        @data = HashWithIndifferentAccess.new(data)
+        @data = HashWithIndifferentAccess.new(dataYear)
+        @myWeek = HashWithIndifferentAccess.new(dataWeek)
     end
 
     private
