@@ -1,0 +1,10 @@
+class CreateLocation < ActiveRecord::Migration[7.1]
+  def change
+    create_table :locations do |t|
+      t.string :name, null: false, index: { unique: true }
+      t.text :address
+
+      t.timestamps
+    end
+  end
+end

@@ -1,13 +1,13 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+valid:
+  email: prenom.nom@email.com
+  firstname: Prenom
+  lastname: Nom de famille
+  administrator: true
+  manager: true
+  phone_office: "51234"
+  phone_home: "+32"
+  groupe: valid
+  service: valid
+  inactive: false
+  last_connection: 2023_11_01 12:00:00
 
-one:
-  email: MyString
-  password_digest: MyString
-  firstname: MyString
-  lastname: MyString
-
-two:
-  email: MyString
-  password_digest: MyString
-  firstname: MyString
-  lastname: MyString

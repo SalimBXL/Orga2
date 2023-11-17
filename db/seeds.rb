@@ -9,12 +9,32 @@
 #   end
 
 
+
+# Création données de base
+Location.create(
+    name: "Unknown Place",
+    address: ""
+)
+Service.create(
+    name: "None",
+    comment: "",
+    location: Location.last
+)
+Groupe.create(
+    name: "None",
+    comment: ""
+)
+
 # Création du profil Admin
 User.create(
     email: "anthony.joly@hubruxelles.be",
     firstname: "Salim a.",
     lastname: "Joly",
     password: "password",
-    password_confirmation: "password"
+    password_confirmation: "password",
+    service: Service.last,
+    groupe: Groupe.last,
+    administrator: true,
+    manager: true
 )
 

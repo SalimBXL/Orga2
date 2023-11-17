@@ -1,0 +1,9 @@
+valid:
+  name: Test
+  comment: Nothing
+  location: valid
+
+service2:
+  name: Another Test
+  comment: Nothing
+  location: valid

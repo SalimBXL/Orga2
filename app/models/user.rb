@@ -1,7 +1,11 @@
 class User < ApplicationRecord
     has_secure_password
+    belongs_to :service
+    belongs_to :groupe
 
+    
     validates :email, presence: true
+    validates :email, uniqueness: true
     normalizes :email, with: ->(email) {email.strip.downcase}
 
     validates :firstname, presence: true
@@ -17,4 +21,11 @@ class User < ApplicationRecord
     generates_token_for :email_confirmation, expires_in: 24.hours do
         email
     end
+
+    validates :groupe, presence: true
+    validates :service, presence: true
+    
+    validates :administrator, presence: true
+    validates :manager, presence: true
+    
 end
