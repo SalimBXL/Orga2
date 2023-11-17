@@ -1,9 +1,15 @@
-<div class="container mt-3">
-    <h1>Dashboard</h1>
+<div>
+    <h1 class="m-4 p-3">Dashboard</h1>
 
-    <%= render partial: "main/dashboard/heatmap"  %>
+    <div class="m-4 p-3 shadow heatmap rounded-2">
+        <%= render partial: "main/dashboard/heatmap"  %>
+    </div>
 
-    <%= render partial: "main/dashboard/my_week" %>
-    
-    <%= render "main/dashboard/absences" %>
+    <div class="m-4 p-3 shadow heatmap rounded-2">
+        <%= render partial: "main/dashboard/my_week" %> 
+    </div>
+
+    <div class="m-4 p-3 shadow heatmap rounded-2">
+        <%= render "main/dashboard/absences" %>
+    </div>
 </div>

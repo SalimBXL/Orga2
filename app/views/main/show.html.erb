@@ -1,17 +1,22 @@
 <% if current_user.present? %>
-    <div class="container">
-        <div class="mt-2 p-5 rounded-3 jumbotron dashboard-header">
-            <%= image_tag(
-                "logo.png",
-                width: "64px",
-                
-                class: "img-fluid",
-                )
-            %>
-            <h1>ORGA</h1> 
-            <p>Welcome <%= current_user.firstname %></p> 
+    <div class="header-not-logged d-flex flex-row m-4 p-3 rounded-3 shadow">
+        <%= image_tag(
+            "logo.png",
+            width: "25%",
+            height: "25%",
+            class: "img-fluid",
+            )
+        %>
+        <div class="m-3">
+            <h1>ORGA²</h1>
+            <p>
+                Team Management <br />
+                <small>v24.01</small>
+            </p>
+            <p>Welcome <%= current_user.firstname %></p>
         </div>
     </div>
 
     <%= render "main/dashboard/dashboard" %>
+    
 <% end %>

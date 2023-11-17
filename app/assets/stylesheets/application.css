@@ -14,8 +14,13 @@
  *= require_self
  */
 
- body {
+ body, html {
+  height: 100%;
   margin: 0;
+  padding: 0;
+  background: url("assets/background_blue_pink.svg");
+  background-size:cover;
+  color: rgb(65, 65, 65);
  }
 
  footer {
@@ -26,23 +31,31 @@
  }
 
  small {
-  font-size: x-small;
+  font-size: small;
  }
 
- 
+  .header-not-logged {
+    background-color: rgba(250, 235, 215, 0.5);
+    color: rgb(65, 65, 65);
+  }
+
+  .heatmap {
+    background-color: rgba(250, 235, 215, 0.5);
+    color: rgb(65, 65, 65);
+  }
 
  .dashboard-header {
   display: flexbox;
-  flex-direction: row;
+  #flex-direction:row;
   align-items: flex-start;
   align-content: flex-start;
  }
 
  .jumbotron {
-   background: url("assets/logo2.png") no-repeat;
-   background-size: cover;
-   background-color: antiquewhite;
-   color: grey;
+   #background: url("assets/logo2.png") no-repeat;
+   #background-size: cover;
+   #background-color: antiquewhite;
+   #color: grey;
  }
 
 
