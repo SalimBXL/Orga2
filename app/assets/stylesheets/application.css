@@ -23,20 +23,25 @@
   color: rgb(65, 65, 65);
  }
 
- footer {
-  background-color: rgb(40, 40, 40);
-  color: white;
-  text-align: center;
-  font-size: small;
- }
 
  small {
   font-size: small;
  }
 
-  .header-not-logged {
-    background-color: rgba(250, 235, 215, 0.5);
+  .card-not-logged {
+    background-color: rgba(250, 235, 215, 0.301);
     color: rgb(65, 65, 65);
+    width: 300px;
+    margin: auto;
+    margin-top: 100px;
+    padding: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .card-not-logged img {
+    padding-right: 50px;
   }
 
   .heatmap {
@@ -68,6 +73,16 @@
     .heatmap-cell-width {
         width: 7px; height: 7px;  /* MOBILE   */
     }
+    .card-not-logged {
+      width: 200px;
+      padding: 25px 50px;
+      margin: 50px;
+      margin-top: 100px;
+    }
+    .card-not-logged img {
+      width: 100px;
+      padding-right: 20px;
+    }
  }
 
  @media screen and (min-width: 576px) {
@@ -97,5 +112,11 @@
   .heatmap-cell-width {
       width: 26px; height: 26px;  /* TABLETTE   */
   }
+}
+
+
+.demo-layout-transparent .mdl-layout__header,
+.demo-layout-transparent .mdl-layout__drawer-button {
+  color: white;
 }
 
