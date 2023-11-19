@@ -17,6 +17,7 @@
  * {
   margin: 0;
   padding: 0;
+  font-family: sans-serif;
  }
 
  body, html {
@@ -26,6 +27,21 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+ }
+
+ .navbar {
+  vertical-align: middle;
+  align-items: center;
+  align-content: center;
+ }
+ .navbar-item {
+  vertical-align: middle;
+  align-items: center;
+  align-content: center;
+  margin-top: 16px;
+ }
+ .navbar-item-text {
+
  }
  
  main {
@@ -105,24 +121,29 @@ font-size: xx-small;
       width: 7px; height: 7px;  /* MOBILE   */
   }
   .card-not-logged p { font-size: 11px;}
+  .navbar-item-text { display: none; margin: 0; padding: 0;}
+  .not-mobile { display: none; }
+  .mobile { margin: 0; padding: 0; }
+  .navbar-title { font-size: 16px; font-weight: bold;}
 }
 
 @media screen and (min-width: 576px) {
-.heatmap-cell-width {
+  .heatmap-cell-width {
     width: 10px; height: 10px;  /* MOBILE   */
-}
+  }
+  .mobile { display: none;}
 }
 
 @media screen and (min-width: 768px) {
-.heatmap-cell-width {
+  .heatmap-cell-width {
     width: 14px; height: 14px;  /* MOBILE   */
-}
+  }
 }
 
 @media screen and (min-width: 992px) {
-.heatmap-cell-width {
+  .heatmap-cell-width {
     width: 18px; height: 18px;  /* TABLETTE   */
-}
+  }
 }
 @media screen and (min-width: 1200px) {
   .heatmap-cell-width {
