@@ -24,14 +24,18 @@
   </head>
 
   <body>
-    <div class="demo-layout-transparent mdl-layout mdl-js-layout">
+    <header>
       <%= render "layouts/navbar" %>
+    </header>
+
+    <main class="mdl-layout__content">
       <div><%= notice %></div>
       <div><%= alert %></div>
-      <main class="mdl-layout__content">
-        <%= yield %>
-      </main>
-      <div class=""><%= render "layouts/footer" %></div>
-    </div>
+      <%= yield %>
+    </main>
+
+    <footer>
+      <%= render "layouts/footer" %></div>
+    </footer>
   </body>
 </html>

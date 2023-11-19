@@ -14,18 +14,38 @@
  *= require_self
  */
 
- body, html {
-  height: 100%;
+ * {
   margin: 0;
   padding: 0;
+ }
+
+ body, html {
   background: url("assets/background_blue_pink.svg");
   background-size:cover;
   color: rgb(65, 65, 65);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+ }
+ 
+ main {
+  flex: 1;
+ }
+
+ .footer-copyright {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
+  text-wrap: wrap;
+  font-size: 11px;
  }
 
 
  small {
-  font-size: small;
+  font-size: 11px;
  }
 
 .card-not-logged {
@@ -111,8 +131,8 @@ font-size: xx-small;
 }
 
 @media screen and (min-width: 1400px) {
-.heatmap-cell-width {
-    width: 26px; height: 26px;  /* TABLETTE   */
-}
+  .heatmap-cell-width {
+      width: 26px; height: 26px;  /* TABLETTE   */
+  }
 }
 

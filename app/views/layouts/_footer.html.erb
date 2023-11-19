@@ -1,14 +1,16 @@
-<footer class="mdl-mini-footer">
-  <div class="mdl-mini-footer__left-section">
-    <div class="mdl-logo">
-        <img width="32" src="assets/logo.png" alt="Orga" />
-        Orga²
-    </div>
-    <p>©2023 - PETScan ULB Erasme, Cyclotron Biomedical</p>
+<div class="w3-bar w3-dark-grey">
+
+  <div class="w3-bar-item">
+    <%= image_tag('logo.png', alt: "Orga²", size: "32x32") %>
   </div>
-  <div class="mdl-mini-footer__right-section">
-    <button class="mdl-mini-footer__social-btn"><img width="32" src="assets/erasme.png" alt="Erasme" /></button>
-    <button class="mdl-mini-footer__social-btn"><img width="32" src="assets/bordet.png" alt="Bordet" /></button>
-    <button class="mdl-mini-footer__social-btn"><img width="32" src="assets/uz-brussel.png" alt="UZ Brussel" /></button>
+  
+  <p class="w3-bar-item footer-copyright">
+    ©2023 - PETScan ULB Erasme, Cyclotron Biomedical
+  </p>
+    
+  <div class="w3-bar-item w3-right">
+    <button><%= image_tag('erasme.png', alt: "HUB Erasme", size: "32x32") %></button>
+    <button><%= image_tag('bordet.png', alt: "Institut Jules Bordet", size: "32x32") %></button>
+    <button><%= image_tag('uz-brussel.png', alt: "UZ Brussel", size: "32x32") %></button>
   </div>
-</footer> 
+</div>
