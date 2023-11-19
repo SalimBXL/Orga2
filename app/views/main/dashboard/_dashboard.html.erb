@@ -1,15 +1,10 @@
-<div>
+<div class="w3-container">
     <h1 class="">My Dashboard</h1>
 
-    <div class="heatmap">
-        <%= render partial: "main/dashboard/heatmap"  %>
-    </div>
-
-    <div class="">
-        <%= render partial: "main/dashboard/my_week" %> 
-    </div>
-
-    <div class="">
-        <%= render "main/dashboard/absences" %>
-    </div>
+    <%= render partial: "main/dashboard/heatmap"  %>
+    
+    <%= render partial: "main/dashboard/my_week" %> 
+    
+    <%= render "main/dashboard/absences" %>
+    
 </div>

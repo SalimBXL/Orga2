@@ -92,29 +92,57 @@
 
 
 .heatmap {
-  background-color: rgba(250, 235, 215, 0.5);
-  color: rgb(65, 65, 65);
+  color: #414141;
+  margin: auto;
+  display: flex; 
+  flex-direction: row;  
+  justify-content: center; 
 }
+
+.heatmap-month {
+  display: flex; 
+  flex-direction: column;
+}
+
+.heatmap-week-number {
+  height: 16px; 
+  margin-bottom: 4px;
+  font-size: 11px;
+}
+
+.heatmap-weeks {
+  background-color: rgba(250, 235, 215, 0.5);
+  display: flex; 
+  flex-direction: column; 
+  justify-content: flex-start;
+}
+
+.heatmap-day {
+  align-content: center;
+  border: grey 0.5px solid;
+}
+
+.heatmap-cell-width {
+  text-align: center;
+  font-size: xx-small;
+}
+
+.heatmap-progressbar {
+  margin: auto;
+  margin-left: 48px;
+  margin-right: 48px;
+  margin-top: 24px;
+  margin-bottom: 0;
+}
+
+
 
 .dashboard-header {
 display: flexbox;
-#flex-direction:row;
 align-items: flex-start;
 align-content: flex-start;
 }
 
-.jumbotron {
-  #background: url("assets/logo2.png") no-repeat;
-  #background-size: cover;
-  #background-color: antiquewhite;
-  #color: grey;
-}
-
-
-.heatmap-cell-width {
-text-align: center;
-font-size: xx-small;
-}
 
 @media screen and (max-width: 576px) {
   .heatmap { display: none; }

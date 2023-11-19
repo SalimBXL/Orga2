@@ -1,7 +1,7 @@
 
-<%# YEAR %>
-<div style="display: flex; flex-direction: row;  justify-content: center;"
->
+<!-- YEAR by weeks -->
+
+<div class="heatmap">
     <% indexSemaineAnnee = 0 %>
     <% dateJour = @firstDayOfCalendar %>
 
@@ -10,11 +10,12 @@
 
         <%# MONTH %>
         <% nomMois = (dateJour + 15.days).strftime("%b") %>
-        <% nombreSemainesDansMois = (dateJour.end_of_month.strftime("%W").to_i) - (dateJour.beginning_of_month.strftime("%W").to_i) %>
+        <% nombreSemainesDansMois = (dateJour.end_of_month.strftime("%U").to_i) - (dateJour.beginning_of_month.strftime("%W").to_i) %>
 
-        <div class="w3-text-grey"
-            style="display: flex; flex-direction: column; marging-left: 8px;">
+        <div class="w3-text-grey heatmap-month">
             <div><%= nomMois %></div>
+
+            <div class="heatmap-week-number">#<%= dateJour.strftime("%U") %></div>
 
             <div class="w3-text-grey"
                 style="display: flex; flex-direction: row;">
@@ -24,32 +25,16 @@
                     <% indexSemaineAnnee += 1 %>
 
                     <%# WEEK %>
-                    <div class="w3-text-grey"
-                        style="display: flex; flex-direction: column; justify-content: flex-start;">
-                        <div class="text-secondary">
-                            <% indexSemaineAnnee %>
-                        </div>
+                    <div class="w3-text-grey heatmap-weeks">
+                        
                         <% 7.times do |indexJour| %>
                             <% indexJour += 1 %>
 
                             <%# DAY %>
-                            <% if dateJour.saturday? || dateJour.sunday? %>
-                                <% bgColor = "lightgrey" %>
-                            <% else %>
-                                <% dateJourFormated = dateJour.strftime("%Y-%m-%d") %>
-                                <% if @data[dateJourFormated] %>
-                                    <% bgColor = getHeatMapColor(@data[dateJourFormated]) %>
-                                <% else %>
-                                    <% bgColor = "white" %>
-                                <% end %>
-                            <% end %>
-                            <div 
-                                class="w3-text-grey heatmap-cell-width w3-<%= bgColor %>"
-                                style="align-content: center;  border: grey 0.5px solid;"        
-                                >
+                            <% bgColor = getHeatMapColor(dateJour) %>
+                            <div class="heatmap-day w3-text-pink-red heatmap-cell-width w3-<%= bgColor %>">
                                 <%= dateJour.day %>
                             </div>
-
                             <% dateJour = dateJour + 1.day %>
                         <% end %>
                     </div>
@@ -57,4 +42,19 @@
             </div>
         </div>
     <% end %>
+</div>
+
+
+<!-- Progress bar for weeks -->
+
+<div class="w3-light-grey w3-round-xlarge w3-tiny heatmap-progressbar">
+    <div id="myBar" 
+        class="w3-container w3-round-xlarge w3-indigo" 
+        style="width:<%= @weekPercent %>%">
+        &nbsp;
+    </div>
+</div>
+<div class="heatmap-progressbar"
+    style="margin-top: 0; font-weight: bold">
+    <small class="w3-text-indigo">Week <%= @currentWeekNumber %> / 52</small>
 </div>
