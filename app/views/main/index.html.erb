@@ -1,14 +1,18 @@
 <% unless current_user.present? %>
-  <div class="card-not-logged">
-    <img src="assets/logo.png" 
-        width="60%" border="0"
-        alt="">
+  <div class="w3-card-4 card-not-logged">
+    <img 
+        src="assets/logo.png" 
+        alt="Orga²"
+        border="0"
+    > 
     <div>
-      <h1>Orga²</h1>
-      <p>
-        Team Management <br />
-        <small>v24.01</small>
-      </p>
+    <h1 class="card-not-logged-title">Orga²</h1>
+    <p class="card-not-logged-title">
+      Team Management <br />
+      <small>v24.01</small>
+    </p>
     </div>
   </div>
 <% end %>
+
+
