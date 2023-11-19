@@ -3,7 +3,7 @@
 
 <div class="heatmap">
     <% indexSemaineAnnee = 0 %>
-    <% dateJour = @firstDayOfCalendar %>
+    <% dateJour = firstDayOfCalendar %>
 
     <% 12.times do |indexMonth| %>
         <% indexMonth += 1 %>
@@ -48,13 +48,10 @@
 <!-- Progress bar for weeks -->
 
 <div class="w3-light-grey w3-round-xlarge w3-tiny heatmap-progressbar">
-    <div id="myBar" 
-        class="w3-container w3-round-xlarge w3-indigo" 
-        style="width:<%= @weekPercent %>%">
-        &nbsp;
+    <div class="w3-container w3-round-xlarge w3-indigo" 
+        style="width:<%= weekPercent %>%">&nbsp;
     </div>
 </div>
-<div class="heatmap-progressbar"
-    style="margin-top: 0; font-weight: bold">
-    <small class="w3-text-indigo">Week <%= @currentWeekNumber %> / 52</small>
+<div class="heatmap-progressbar" style="margin-top: 0; font-weight: bold">
+    <small class="w3-text-indigo">Week <%= currentWeekNumber %> / 52</small>
 </div>

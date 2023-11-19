@@ -1,7 +1,28 @@
 module ApplicationHelper
 
+    def firstDayOfCalendar
+        firstDayOfTheYear = Date.today.beginning_of_year
+        dayOfWeek = firstDayOfTheYear.wday
+        delta = -1 if (dayOfWeek < 1)
+        delta = 0 if (dayOfWeek == 1)
+        delta = (dayOfWeek - 1) if (dayOfWeek > 1)
+        return firstDayOfTheYear - delta.days
+    end
+
+    def currentWeekNumber
+        Date.today.strftime("%U").to_i
+    end
+
+    def weekPercent
+        (currentWeekNumber / 52.00) * 100
+    end
+
     def getDateFormated(date)
         date.strftime("%Y-%m-%d")
+    end
+
+    def getDateFrenchFormated(date)
+        date.strftime("%e %B %Y, %k:%M")
     end
 
     def getHeatMapColor(dateJour)

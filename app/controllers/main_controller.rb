@@ -4,15 +4,6 @@ class MainController < ApplicationController
     end
 
     def show
-        firstDayOfTheYear = Date.today.beginning_of_year
-        dayOfWeek = firstDayOfTheYear.wday
-        delta = -1 if (dayOfWeek < 1)
-        delta = 0 if (dayOfWeek == 1)
-        delta = (dayOfWeek - 1) if (dayOfWeek > 1)
-        @firstDayOfCalendar = firstDayOfTheYear - delta.days
-        @currentWeekNumber = (Date.today.strftime("%U").to_i)-1
-        @weekPercent = (@currentWeekNumber / 52.00) * 100
-        
         daysOff = {
             "2023-04-10": { date: "2023-04-10", name: "Pâques" },
             "2023-05-01": { date: "2023-05-01", name: "Travail" },

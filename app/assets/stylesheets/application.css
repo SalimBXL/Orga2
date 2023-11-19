@@ -29,6 +29,13 @@
   min-height: 100vh;
  }
 
+ .welcome-subtitle{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 16px;
+ }
+
  .navbar {
   vertical-align: middle;
   align-items: center;
