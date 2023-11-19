@@ -14,8 +14,8 @@ class MainController < ApplicationController
         
         dataWeek = {
             "1": { job: { code: "5", ampm: true }, absence: { code: "", valide: false } },
-            "2": { job: { code: "M", ampm: true }, absence: { code: "ma", valide: false } },
-            "3": { job: { code: "", ampm: true }, absence: { code: "co", valide: true } },
+            "2": { job: { code: "M", ampm: true, mission: true }, absence: { code: "", valide: false } },
+            "3": { job: { code: "", ampm: true }, absence: { code: "ma", valide: true } },
             "4": { job: { code: "", ampm: true }, absence: { code: "co", valide: false } },
             "5": { job: { code: "FDG2", ampm: false }, absence: { code: "", valide: false } },
             "6": { job: { code: "", ampm: true }, absence: { code: "", valide: false } }
@@ -49,6 +49,18 @@ class MainController < ApplicationController
                     code: "fdg",
                     ampm: false
                 }, 
+                absence: {
+                    code: "", 
+                    valide: false
+                }
+            },
+            "2023-03-09": { 
+                date: "2023-03-09", 
+                job: {
+                    code: "fdg",
+                    ampm: false,
+                    mission: true
+                },
                 absence: {
                     code: "", 
                     valide: false

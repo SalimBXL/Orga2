@@ -18,12 +18,12 @@
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  color: white;
  }
 
  body, html {
   background: url("assets/background_blue_pink.svg");
   background-size:cover;
-  color: rgb(65, 65, 65);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -117,9 +117,7 @@ font-size: xx-small;
 }
 
 @media screen and (max-width: 576px) {
-  .heatmap-cell-width {
-      width: 7px; height: 7px;  /* MOBILE   */
-  }
+  .heatmap { display: none; }
   .card-not-logged p { font-size: 11px;}
   .navbar-item-text { display: none; margin: 0; padding: 0;}
   .not-mobile { display: none; }
