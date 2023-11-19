@@ -1,47 +1,17 @@
-<header class="mdl-layout__header mdl-layout__header--transparent">
-  <div class="mdl-layout__header-row">
+<div class="w3-bar">
 
-    <span class="mdl-layout-title">
-    Orga²
-    </span>
-    
-    <div class="mdl-layout-spacer"></div>
-
-    <% if current_user.present? %>
-      <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="">Home</a>
-        <a class="mdl-navigation__link" href="">Today</a>
-        <a class="mdl-navigation__link" href="">Calendar</a>
-        <a class="mdl-navigation__link" href="">My Dashboard</a>
-      </nav>
-    <% end %>
-
-    <%= link_to "Login", new_session_path, 
-      class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" unless current_user.present?
-    %>
-    <%= button_to "Log Out", session_path, 
-      method: :delete,
-      class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" if current_user.present?
-    %>
-  </div>
-</header>
-  
-<div class="mdl-layout__drawer">
-  <span class="mdl-layout-title">Orga²</span>
   <% if current_user.present? %>
-    <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" href="">Home</a>
-      <a class="mdl-navigation__link" href="">Today</a>
-      <a class="mdl-navigation__link" href="">Calendar</a>
-      <a class="mdl-navigation__link" href="">My Dashboard</a>1
-    </nav>
-  <% end %>
-  <%= link_to "Login", new_session_path, 
-    class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" unless current_user.present?
+    <a href="#" class="w3-bar-item w3-button">Home</a>
+    <a href="#" class="w3-bar-item w3-button">Calendar</a>
+    <a href="#" class="w3-bar-item w3-button">Calendar</a>
+    <a href="#" class="w3-bar-item w3-button">My Dashboard</a>
+
+    <%= button_to "Log Out", session_path, method: :delete,
+      class: "w3-bar-item w3-button w3-light-purple w3-right w3-margin w3-padding-small"
+    %>
+  <% else %>
+    <%= link_to "Login", new_session_path, 
+    class: "w3-bar-item w3-button w3-pink w3-right w3-margin w3-padding-small"
   %>
-  <%= button_to "Log Out", session_path, 
-    method: :delete,
-    class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" if current_user.present?
-  %>
+  <% end %>  
 </div>
-  
