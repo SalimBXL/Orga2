@@ -7,40 +7,40 @@
       Orga²
     </h3>
 
-    <a href="#" class="w3-bar-item w3-button w3-text-white navbar-item">
+    <a href="#" class="w3-bar-item w3-btn w3-round w3-hover-purple w3-text-white navbar-item">
       <i class="w3-large material-icons">home</i>
       <span class="navbar-item-text">Home</span>
     </a>
 
-    <a href="#" class="w3-bar-item w3-button w3-text-white navbar-item">
+    <a href="#" class="w3-bar-item w3-btn w3-round w3-hover-purple w3-text-white navbar-item">
       <i class="w3-large material-icons">calendar_month</i>
       <span class="navbar-item-text">Calendar</span>
     </a>
     
-    <a href="#" class="w3-bar-item w3-button w3-text-white navbar-item">
+    <a href="#" class="w3-bar-item w3-btn w3-round w3-hover-purple w3-text-white navbar-item">
       <i class="w3-large material-icons">today</i>
       <span class="navbar-item-text">Today</span>
     </a>
     
-    <a href="#" class="w3-bar-item w3-button w3-text-white navbar-item">
+    <a href="#" class="w3-bar-item w3-btn w3-round w3-hover-purple w3-text-white navbar-item">
       <i class="w3-large material-icons">dashboard</i>
       <span class="navbar-item-text">My Dashboard</span>
     </a>
 
     <div class="mobile">
       <%= button_to content_tag(:i, "logout", class: ["w3-large", "material-icons"]), session_path, method: :delete,
-        class: "w3-bar-item w3-button w3-purple  w3-text-white w3-right w3-margin w3-padding-small"
+        class: "w3-bar-item w3-btn w3-round w3-purple  w3-text-white w3-right w3-margin w3-padding-small"
       %>
     </div>
     <div class="not-mobile">
       <%= button_to "logout", session_path, method: :delete,
-        class: "w3-bar-item w3-button w3-purple  w3-text-white w3-right w3-margin w3-padding-small"
+        class: "w3-bar-item w3-btn w3-round w3-purple  w3-text-white w3-right w3-margin w3-padding-small"
       %>
     </div>
     
   <% else %>
     <%= link_to "Login", new_session_path, 
-    class: "w3-bar-item w3-button w3-pink w3-text-white w3-right w3-margin w3-padding-small"
+    class: "w3-bar-item w3-btn w3-pink w3-text-white w3-right w3-margin w3-padding-small"
   %>
   <% end %>  
 </div>
