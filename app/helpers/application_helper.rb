@@ -1,5 +1,13 @@
 module ApplicationHelper
 
+    def isWeekend?(date)
+        return (date.saturday? || date.sunday?) 
+    end
+
+    def dateFirstDayOfTheCurrentWeek
+        Date.today.beginning_of_week
+    end
+
     def firstDayOfCalendar
         firstDayOfTheYear = Date.today.beginning_of_year
         dayOfWeek = firstDayOfTheYear.wday
@@ -26,7 +34,7 @@ module ApplicationHelper
     end
 
     def getHeatMapColor(dateJour)
-        if dateJour.saturday? || dateJour.sunday?
+        if isWeekend?(dateJour)
             bgColor = "lightgrey"
         else
             dateJourFormated = getDateFormated(dateJour)
