@@ -33,6 +33,10 @@ module ApplicationHelper
         date.strftime("%e %B %Y, %k:%M")
     end
 
+    def getDateFrenchFormatedWithDayName(date)
+        date.strftime("%a %e %B")
+    end
+
     def getHeatMapColor(dateJour)
         if isWeekend?(dateJour)
             bgColor = "lightgrey"
