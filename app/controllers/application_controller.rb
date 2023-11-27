@@ -1,9 +1,14 @@
 class ApplicationController < ActionController::Base
+    before_action :current_user
 
     private
 
     def authenticate_user!
         redirect_to root_path, alert: "You must be logged in to do that." unless user_signed_in?
+    end
+
+    def redirect_if_authenticated
+        redirect_to root_path, alert: "You are already logged in." if user_signed_in?
     end
 
     def current_user
@@ -26,13 +31,27 @@ class ApplicationController < ActionController::Base
     def login(user)
         Current.user = user
         reset_session
-        session[:user_id] = user.id    
+        session[:user_id] = user.id
     end
 
 
     def logout(user)
         Current.user = nil
         reset_session
+    end
+
+
+    def print_session_var(text = nil)
+        puts " "
+        puts " "
+        puts "*****************************"
+        puts "#{text}"
+        puts "SESSION : "
+        session.keys.each do |key|
+            puts "SESSION[:#{key}] = #{session[key]}"
+        end
+        puts "*****************************"
+        puts " "
     end
 
 end

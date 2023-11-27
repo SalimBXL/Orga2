@@ -51,9 +51,7 @@
   align-content: center;
   margin-top: 16px;
  }
- .navbar-item-text {
 
- }
  
  main {
   flex: 1;
@@ -155,14 +153,23 @@
 
 
 .dashboard-header {
-display: flexbox;
-align-items: flex-start;
-align-content: flex-start;
+  display: flexbox;
+  align-items: flex-start;
+  align-content: flex-start;
 }
+
+.my-absences {
+  display: flex;
+}
+
+.my-dashboard {}
 
 
 @media screen and (max-width: 576px) {
   .heatmap { display: none; }
+  .heatmap-progressbar { display: none;}
+  .my-absences { display: none; }
+  .my-dashboard { display: none; }
   .card-not-logged p { font-size: 11px;}
   .navbar-item-text { display: none; margin: 0; padding: 0;}
   .not-mobile { display: none; }
