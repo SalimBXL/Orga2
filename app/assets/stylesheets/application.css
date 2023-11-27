@@ -29,6 +29,10 @@
   min-height: 100vh;
  }
 
+ a:hover {
+  transform: scale(1.1);
+ }
+
  .welcome-subtitle{
   display: flex;
   flex-direction: row;
@@ -132,6 +136,12 @@
 .heatmap-cell-width {
   text-align: center;
   font-size: xx-small;
+}
+
+.heatmap-cell-currentday {
+  border-width: 2px;
+  border-color: purple;
+  font-weight: bold;
 }
 
 .heatmap-progressbar {

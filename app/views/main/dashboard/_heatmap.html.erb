@@ -32,7 +32,7 @@
 
                             <%# DAY %>
                             <% bgColor = getHeatMapColor(dateJour) %>
-                            <div class="heatmap-day w3-text-pink-red heatmap-cell-width w3-<%= bgColor %>">
+                            <div class="heatmap-day w3-text-pink-red heatmap-cell-width w3-<%= bgColor %> <%= (Date.today == dateJour) && "heatmap-cell-currentday" %>">
                                 <%= dateJour.day %>
                             </div>
                             <% dateJour = dateJour + 1.day %>
