@@ -7,26 +7,44 @@
       Orga²
     </h3>
 
-    <a href="#" class="w3-bar-item w3-btn w3-round w3-hover-purple w3-text-white navbar-item">
-      <i class="w3-large material-icons">home</i>
-      <span class="navbar-item-text">Home</span>
-    </a>
+    <!-- HOME -->
+    <%= link_to '<i class="w3-large material-icons">home</i> <span class="navbar-item-text">Home</span>'.html_safe, 
+      root_path, 
+      class: "w3-bar-item w3-btn w3-round w3-hover-purple w3-text-white navbar-item"
+    %>
 
-    <a href="#" class="w3-bar-item w3-btn w3-round w3-hover-purple w3-text-white navbar-item">
-      <i class="w3-large material-icons">calendar_month</i>
-      <span class="navbar-item-text">Calendar</span>
-    </a>
-    
+    <!-- TODAY -->
     <a href="#" class="w3-bar-item w3-btn w3-round w3-hover-purple w3-text-white navbar-item">
       <i class="w3-large material-icons">today</i>
       <span class="navbar-item-text">Today</span>
     </a>
-    
-    <a href="#" class="w3-bar-item w3-btn w3-round w3-hover-purple w3-text-white navbar-item">
+
+    <!-- DASHBOARD -->
+    <a href="/dashboard" class="w3-bar-item w3-btn w3-round w3-hover-purple w3-text-white navbar-item">
       <i class="w3-large material-icons">dashboard</i>
       <span class="navbar-item-text">My Dashboard</span>
     </a>
 
+
+    <div class="not-mobile">
+
+      <!-- MONTH -->
+      <a href="#" class="w3-bar-item w3-btn w3-round w3-hover-purple w3-text-white navbar-item not-mobile">
+        <i class="w3-large material-icons">calendar_month</i>
+        <span class="navbar-item-text">Calendar</span>
+      </a>
+
+      <!-- RESOURCES -->
+      <%= link_to '<i class="w3-large material-icons">speaker_group</i> <span class="navbar-item-text">Resources</span>'.html_safe, 
+        root_path, 
+        class: "w3-bar-item w3-btn w3-round w3-hover-purple w3-text-white navbar-item"
+      %>
+    
+    </div>
+
+
+
+    <!-- LOGOUT -->
     <div class="mobile">
       <%= button_to content_tag(:i, "logout", class: ["w3-large", "material-icons"]), session_path, method: :delete,
         class: "w3-bar-item w3-btn w3-round w3-purple  w3-text-white w3-right w3-margin w3-padding-small"
@@ -39,6 +57,8 @@
     </div>
     
   <% else %>
+
+    <!-- LOGIN -->
     <%= link_to "Login", new_session_path, 
     class: "w3-bar-item w3-btn w3-pink w3-text-white w3-right w3-margin w3-padding-small"
   %>

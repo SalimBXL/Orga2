@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_14_142022) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_28_095726) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -28,6 +28,26 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_142022) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_locations_on_name", unique: true
+  end
+
+  create_table "resource_groupes", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "resources", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.bigint "service_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "referent_id", null: false
+    t.bigint "groupe_id", null: false
+    t.index ["groupe_id"], name: "index_resources_on_groupe_id"
+    t.index ["referent_id"], name: "index_resources_on_referent_id"
+    t.index ["service_id"], name: "index_resources_on_service_id"
   end
 
   create_table "services", force: :cascade do |t|
@@ -59,6 +79,9 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_14_142022) do
     t.index ["service_id"], name: "index_users_on_service_id"
   end
 
+  add_foreign_key "resources", "resource_groupes", column: "groupe_id"
+  add_foreign_key "resources", "services"
+  add_foreign_key "resources", "users", column: "referent_id"
   add_foreign_key "services", "locations"
   add_foreign_key "users", "groupes"
   add_foreign_key "users", "services"

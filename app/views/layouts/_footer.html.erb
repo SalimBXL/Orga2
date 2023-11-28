@@ -1,7 +1,8 @@
 <div class="w3-bar w3-dark-grey">
 
+
   <div class="w3-bar-item">
-    <%= image_tag('logo.png', alt: "Orga²", size: "32x32") %>
+    <%= image_tag('logo.png', alt: "Orga²", size: "32x32", class: "not-mobile") %>
   </div>
   
   <p class="w3-bar-item footer-copyright">
@@ -9,8 +10,8 @@
   </p>
     
   <div class="w3-bar-item w3-right">
-    <button><%= image_tag('erasme.png', alt: "HUB Erasme", size: "32x32") %></button>
-    <button><%= image_tag('bordet.png', alt: "Institut Jules Bordet", size: "32x32") %></button>
-    <button><%= image_tag('uz-brussel.png', alt: "UZ Brussel", size: "32x32") %></button>
+    <button class="not-mobile"><%= image_tag('erasme.png', alt: "HUB Erasme", size: "32x32") %></button>
+    <button class="not-mobile"><%= image_tag('bordet.png', alt: "Institut Jules Bordet", size: "32x32") %></button>
+    <button class="not-mobile"><%= image_tag('uz-brussel.png', alt: "UZ Brussel", size: "32x32") %></button>
   </div>
 </div>

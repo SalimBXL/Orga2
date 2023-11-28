@@ -38,3 +38,24 @@ User.create(
     manager: true
 )
 
+
+# Création de resources
+ResourceGroupe.create(
+    name: "Camera",
+    description: ""
+)
+
+Resource.create(
+    name: "Vereos",
+    description: "PET/CT",
+    service: Service.last,
+    referent: User.last,
+    groupe: ResourceGroupe.last
+)
+Resource.create(
+    name: "TF",
+    description: "PET/CT",
+    service: Service.last,
+    referent: User.last,
+    groupe: ResourceGroupe.last
+)

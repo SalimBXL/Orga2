@@ -33,7 +33,7 @@
   transform: scale(1.1);
  }
 
- .welcome-subtitle{
+ .welcome-subtitle {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -144,8 +144,6 @@
 
 .heatmap-progressbar {
   margin: auto;
-  margin-left: 48px;
-  margin-right: 48px;
   margin-top: 24px;
   margin-bottom: 0;
 }
@@ -175,35 +173,31 @@
   .not-mobile { display: none; }
   .mobile { margin: 0; padding: 0; }
   .navbar-title { font-size: 16px; font-weight: bold;}
+  .welcome-subtitle { margin: 8px; padding: 0; font-size: 13px; }
 }
 
 @media screen and (min-width: 576px) {
-  .heatmap-cell-width {
-    width: 10px; height: 10px;  /* MOBILE   */
-  }
+  .heatmap-cell-width { width: 10px; height: 10px;  /* MOBILE   */ }
+  .heatmap-progressbar { width: 520px; }
   .mobile { display: none;}
 }
 
 @media screen and (min-width: 768px) {
-  .heatmap-cell-width {
-    width: 14px; height: 14px;  /* MOBILE   */
-  }
+  .heatmap-cell-width { width: 14px; height: 14px;  /* MOBILE   */ }
+  .heatmap-progressbar { width: 728px; }
 }
 
 @media screen and (min-width: 992px) {
-  .heatmap-cell-width {
-    width: 18px; height: 18px;  /* TABLETTE   */
-  }
+  .heatmap-cell-width { width: 18px; height: 18px;  /* TABLETTE   */ }
+  .heatmap-progressbar { width: 936px; }
 }
 @media screen and (min-width: 1200px) {
-  .heatmap-cell-width {
-      width: 22px; height: 22px;  /* TABLETTE   */
-  }
+  .heatmap-cell-width { width: 22px; height: 22px;  /* TABLETTE   */ }
+  .heatmap-progressbar { width: 1144px; }
 }
 
 @media screen and (min-width: 1400px) {
-  .heatmap-cell-width {
-      width: 26px; height: 26px;  /* TABLETTE   */
-  }
+  .heatmap-cell-width { width: 26px; height: 26px;  /* TABLETTE   */ }
+  .heatmap-progressbar { width: 1352px; }
 }
 

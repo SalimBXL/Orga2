@@ -3,6 +3,8 @@ class User < ApplicationRecord
     belongs_to :service
     belongs_to :groupe
 
+    has_many :resources
+
     
     validates :email, presence: true
     validates :email, uniqueness: true
