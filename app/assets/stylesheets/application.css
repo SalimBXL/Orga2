@@ -30,7 +30,7 @@
  }
 
  a:hover {
-  transform: scale(1.1);
+  /* transform: scale(1.1); */
  }
 
  .welcome-subtitle {
@@ -162,6 +162,13 @@
 
 .my-dashboard {}
 
+.dashboard-my-weeks {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+}
 
 @media screen and (max-width: 576px) {
   .heatmap { display: none; }

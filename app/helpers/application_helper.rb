@@ -57,9 +57,9 @@ module ApplicationHelper
     private
 
     def getCellColor(data)
-        res = "blue" if data[:job][:code].present? && data[:job][:ampm]
-        res = "light-blue" if data[:job][:code].present? && !data[:job][:ampm]
-        res = "amber" if data[:job][:code].present? && data[:job][:mission]
+        res = "blue" if data[:job][:am][:code].present?
+        res = "light-blue" if data[:job][:pm][:code].present?
+        res = "amber" if data[:job][:mission].present? && data[:job][:mission]
         res = "deep-orange" if data[:absence][:code].present? && !data[:absence][:valide]
         res = "light-green" if data[:absence][:code].present? && data[:absence][:valide]
         return res

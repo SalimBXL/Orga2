@@ -1,19 +1,60 @@
-<h3 class="not-mobile">My Week</h3>
-<div class="w3-container w3-row w3-margin">
+<div class="not-mobile">
+    <h4>My Weeks</h4>
+
+    <% (1..6).each do |indexWeek| %>
+
+        <div class="w3-container w3-row w3-margin w3-text-blue dashboard-my-weeks">
+
+            <div class="w3-monospace w3-text-grey w3-margin-right w3-padding-right w3-padding-right m1">
+                (#xx)
+            </div>
+
+            <div class="w3-monospace w3-margin-right w3-padding-right m3">
+                xx/xx - yy/xx
+            </div>
+
+            <div class="w3-text-pink w3-margin-right w3-padding-right w3-margin-left w3-padding-left w3-col w3-white w3-center  w3-padding w3-round w3-border w3-border-pink w3-text-pink m2">
+                Tasks
+            </div>
+
+            <% (1..6).each do |indexDay| %>
+                <div class="w3-text-blue w3-margin-left w3-col w3-white w3-center  w3-padding w3-round w3-border w3-border-pink m1">
+                    M
+                </div>
+            <% end %>
+        </div>
+    <% end %>
+</div>
+
+
+
+<!-- MOBILE VIEW -->
+<div class="mobile container">
     <% 5.times do |indexJour| %>
         <% dateOfTheDay = dateFirstDayOfTheCurrentWeek + indexJour %>
-        <div class="w3-col 
-            w3-<%= isWeekend?(dateOfTheDay) ? "grey" : "white" %> 
-            w3-center 
-            w3-margin-right
-            w3-margin-top
-            w3-padding:0
-            w3-round
-            w3-border w3-border-pink
-            m2">
-            <%= getDateFrenchFormatedWithDayName(dateOfTheDay) %>
-            <hr>
-            Jobs
+        <% color = getHeatMapColor(dateOfTheDay) %>
+        
+        <div class="w3-card<%= "-4" if dateOfTheDay == Date.today %> w3-white w3-center w3-round">
+            <header class="w3-container w3-<%= color %>">
+                <h4><%= getDateFrenchFormatedWithDayName(dateOfTheDay) %></h4>
+            </header>
+
+            <div class="w3-container w3-margin-bottom">
+                <% if @data[getDateFormated(dateOfTheDay)] %>
+                    <% codes = Hash.new %>
+                    <% codes[:am] = @data[getDateFormated(dateOfTheDay)][:job][:am][:code] || [""] %>
+                    <% codes[:pm] = @data[getDateFormated(dateOfTheDay)][:job][:pm][:code] || [""] %>
+                    <div class="w3-container w3-padding">
+                        <% codes[:am].each do |code| %>
+                            <span class="w3-margin-right w3-text-blue"> <%= code %> </span>
+                        <% end %>
+
+                        <% codes[:pm].each do |code| %>
+                            <span class="w3-margin-left w3-text-light-blue"> <%= code %> </span>
+                        <% end %>
+                    </div>
+                <% end %>
+            </div>
         </div>
     <% end %>
 </div>
