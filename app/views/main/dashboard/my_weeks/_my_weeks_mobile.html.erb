@@ -1,0 +1,28 @@
+<% 5.times do |indexJour| %>
+    <% dateOfTheDay = dateFirstDayOfTheCurrentWeek + indexJour %>
+    <% color = getHeatMapColor(dateOfTheDay) %>
+    <% color = "grey" if (color == "light-grey" || color.nil?) %>
+    <% dataDay = @data[getDateFormated(dateOfTheDay)] %>
+    <% formatedDateOfTheDay = getDateFrenchFormatedWithDayName(dateOfTheDay) %>
+    <% if dataDay %>
+        <% codes = Hash.new %>
+        <% codes[:am] = [""] %><% codes[:pm] = [""] %>
+        <% codes[:am] = dataDay.job.am.code if dataDay.job.am.code.length > 0 %>
+        <% codes[:pm] = dataDay.job.pm.code if dataDay.job.pm.code.length > 0 %>
+    <% end %>
+    <div class="w3-card<%= "-4" if dateOfTheDay == Date.today %> w3-light-grey w3-center w3-round">
+        <header class="w3-container w3-<%= color %>">
+            <h4 class=""><%= formatedDateOfTheDay %></h4>
+        </header>
+        <div class="w3-container w3-margin-bottom">
+            <div class="w3-container w3-padding">
+                <% codes[:am].each do |code| %>
+                    <span class="w3-margin-right w3-text-blue"> <%= code %> </span>
+                <% end %>
+                <% codes[:pm].each do |code| %>
+                    <span class="w3-margin-left w3-text-light-blue"> <%= code %> </span>
+                <% end %>
+            </div>
+        </div>
+    </div>
+<% end %>

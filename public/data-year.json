@@ -1,0 +1,78 @@
+{
+    "2023-11-27": { 
+        "date": "2023-11-27", 
+        "job": {
+            "am": {
+                "code": ["5"]
+            },
+            "pm": {
+                "code": []
+            }
+        }, 
+        "absence": {
+            "code": "", 
+            "valide": false
+        }
+    },
+    "2023-11-28": { 
+        "date": "2023-11-28", 
+        "job": {
+            "am": { 
+                "code": ["5", "L", "QC"] 
+            },
+            "pm": { 
+                "code": ["FDG2"] 
+            }
+        }, 
+        "absence": {
+            "code": "", 
+            "valide": false
+        }
+    },
+    "2023-11-29": { 
+        "date": "2023-11-29", 
+        "job": {
+            "am": { 
+                "code": [] 
+            },
+            "pm": { 
+                "code": [] 
+            }
+        }, 
+        "absence": {
+            "code": "", 
+            "valide": false
+        }
+    },
+    "2023-11-30": { 
+        "date": "2023-11-30", 
+        "job": {
+            "am": {
+                "code": ["FDG"]
+            },
+            "pm": {
+                "code": []
+            }   
+        }, 
+        "absence": {
+            "code": "co", 
+            "valide": true
+        }
+    },
+    "2023-12-01": { 
+        "date": "2023-12-01", 
+        "job": {
+            "am": {
+                "code": ["FDG2"]
+            },
+            "pm": {
+                "code": []
+            },
+            "mission": false
+        }, 
+        "absence": {
+            "code": "co", 
+            "valide": false
+        }
+    }
+}

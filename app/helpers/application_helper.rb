@@ -1,7 +1,7 @@
 module ApplicationHelper
 
     def isWeekend?(date)
-        return (date.saturday? || date.sunday?) 
+        (date.saturday? || date.sunday?) 
     end
 
     def dateFirstDayOfTheCurrentWeek
@@ -38,30 +38,21 @@ module ApplicationHelper
     end
 
     def getHeatMapColor(dateJour)
-        if isWeekend?(dateJour)
-            bgColor = "lightgrey"
-        else
-            dateJourFormated = getDateFormated(dateJour)
-            unless @daysOff[dateJourFormated]
-                if @data[dateJourFormated]
-                    bgColor = getCellColor(@data[dateJourFormated])
-                else
-                    bgColor = "white"
-                end
-            else
-                bgColor = "blue-grey"
-            end
-        end
+        dateJourFormated = getDateFormated(dateJour)
+        return "" if isWeekend?(dateJour)
+        return "blue-grey" if @daysOff[dateJourFormated]
+        return getCellColor(@data[dateJourFormated]) if @data[dateJourFormated]
+        return "light-grey"
     end
 
     private
 
     def getCellColor(data)
-        res = "blue" if data[:job][:am][:code].present?
-        res = "light-blue" if data[:job][:pm][:code].present?
-        res = "amber" if data[:job][:mission].present? && data[:job][:mission]
-        res = "deep-orange" if data[:absence][:code].present? && !data[:absence][:valide]
-        res = "light-green" if data[:absence][:code].present? && data[:absence][:valide]
+        res =  "blue" if data.job.am.code.present?
+        res =  "light-blue" if data.job.pm.code.present?
+        res =  "amber" if (data.job.mission.present? && data.job.mission)
+        res =  "deep-orange" if (data.absence.code.present? && !data.absence.valide)
+        res =  "light-green" if (data.absence.code.present? && data.absence.valide)
         return res
     end
 end

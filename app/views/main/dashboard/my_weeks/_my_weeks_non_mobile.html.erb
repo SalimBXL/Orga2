@@ -1,0 +1,25 @@
+<h4>My Weeks</h4>
+
+<% (1..6).each do |indexWeek| %>
+
+    <div class="w3-container w3-row w3-margin w3-text-blue dashboard-my-weeks">
+
+        <div class="w3-monospace w3-text-grey w3-margin-right w3-padding-right w3-padding-right m1">
+            (#xx)
+        </div>
+
+        <div class="w3-monospace w3-margin-right w3-padding-right m3">
+            xx/xx - yy/xx
+        </div>
+
+        <div class="w3-text-pink w3-margin-right w3-padding-right w3-margin-left w3-padding-left w3-col w3-white w3-center  w3-padding w3-round w3-border w3-border-pink w3-text-pink m2">
+            Tasks
+        </div>
+
+        <% (1..6).each do |indexDay| %>
+            <div class="w3-text-blue w3-margin-left w3-col w3-white w3-center  w3-padding w3-round w3-border w3-border-pink m1">
+                M
+            </div>
+        <% end %>
+    </div>
+<% end %>

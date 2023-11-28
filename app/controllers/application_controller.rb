@@ -3,6 +3,11 @@ class ApplicationController < ActionController::Base
 
     private
 
+    def readJsonFile(jsonFileName)
+        data = File.exist?(jsonFileName) ? File.read(jsonFileName) : {}
+        return JSON.parse(data, object_class: OpenStruct)
+    end
+
     def authenticate_user!
         redirect_to root_path, alert: "You must be logged in to do that." unless user_signed_in?
     end
