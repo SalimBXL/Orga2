@@ -22,12 +22,9 @@
 
 
                 <div class="w3-bar-item">
-                    <div class="w3-xxlarge"><%= resource.name %></div>
-                </div>
-
-                <div class="w3-bar-item">
-                    <div class="w3-large"><%= resource.description %></div>
-                    <div><%= resource.service.name %> - Referent: <%= link_to resource.referent.fullname, "#" %></div>
+                    <div class="w3-xxlarge"><%= resource.name.upcase %></div>
+                    <div class="w3-large w3-margin-left"><%= resource.description %></div>
+                    <div class="w3-margin-left"><%= resource.service.name.titleize %> - Referent: <%= link_to resource.referent.fullname, "#" %></div>
                 </div>
             </li>
         <% end %>
