@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
 
   resources :resource_groupes, only: [ :index ]
-  resources :resources, only: [ :index ]
+  resources :resources, only: [ :index, :show ]
 
   
   # Defines the root path route ("/")

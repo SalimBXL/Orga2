@@ -19,30 +19,31 @@
       <span class="navbar-item-text">Today</span>
     </a>
 
+    
+
+
+    <!-- MONTH -->
+    <div class="not-mobile">
+      <a href="#" class="w3-bar-item w3-btn w3-round w3-hover-purple w3-text-white navbar-item not-mobile w3-padding-small">
+        <i class="w3-large material-icons">calendar_month</i>
+        <span class="navbar-item-text">Calendar</span>
+      </a>
+    </div>
+
+    <!-- RESOURCES -->
+    <div class="not-mobile">
+      <%= link_to '<i class="w3-large material-icons">speaker_group</i> <span class="navbar-item-text">Resources</span>'.html_safe, 
+        resource_groupes_path, 
+        class: "w3-bar-item w3-btn w3-round w3-hover-purple w3-text-white navbar-item w3-padding-small"
+      %>
+    </div>
+
+
     <!-- DASHBOARD -->
     <a href="/dashboard" class="w3-bar-item w3-btn w3-round w3-hover-purple w3-text-white navbar-item w3-padding-small">
       <i class="w3-large material-icons">dashboard</i>
       <span class="navbar-item-text">My Dashboard</span>
     </a>
-
-
-    <div class="not-mobile">
-
-      <!-- MONTH -->
-      <a href="#" class="w3-bar-item w3-btn w3-round w3-hover-purple w3-text-white navbar-item not-mobile w3-padding-small">
-        <i class="w3-large material-icons">calendar_month</i>
-        <span class="navbar-item-text">Calendar</span>
-      </a>
-
-      <!-- RESOURCES -->
-      <%= link_to '<i class="w3-large material-icons">speaker_group</i> <span class="navbar-item-text">Resources</span>'.html_safe, 
-        resource_groupes_path, 
-        class: "w3-bar-item w3-btn w3-round w3-hover-purple w3-text-white navbar-item w3-padding-small"
-      %>
-    
-    </div>
-
-
 
     <!-- LOGOUT -->
     <div class="mobile">

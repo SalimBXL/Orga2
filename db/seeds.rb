@@ -41,10 +41,21 @@ User.create(
 
 # Création de resources
 ResourceGroupe.create(
+    name: "Activity meter",
+    description: "Activimètres de mesures de doses"
+)
+ResourceGroupe.create(
     name: "Camera",
-    description: ""
+    description: "Tomographes"
 )
 
+Resource.create(
+    name: "Trasis Unidose",
+    description: "Dispenseur de doses.",
+    service: Service.last,
+    referent: User.last,
+    groupe: ResourceGroupe.first
+)
 Resource.create(
     name: "Vereos",
     description: "PET/CT",

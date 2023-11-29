@@ -171,6 +171,13 @@
   align-content: flex-start;
 }
 
+.plus-button {
+  bottom: 100px;
+  right: 8vw;
+  position: fixed;
+}
+
+
 @media screen and (max-width: 576px) {
   .heatmap { display: none; }
   .heatmap-progressbar { display: none;}
@@ -182,6 +189,10 @@
   .mobile { margin: 0; padding: 0; }
   .navbar-title { font-size: 16px; font-weight: bold;}
   .welcome-subtitle { margin: 8px; padding: 0; font-size: 13px; }
+  .plus-button {
+    bottom: 50px;
+    right: 30px;
+  }
 }
 
 @media screen and (min-width: 576px) {

@@ -1,3 +1,5 @@
+<%= button_to '<i class="material-icons">add</i>'.html_safe, "#", class:"plus-button w3-btn w3-large w3-circle w3-indigo" %>
+
 <h1 class="w3-container">
     <i class="w3-xxlarge material-icons">speaker_group</i>
     Resources
@@ -5,26 +7,35 @@
 
 <div class="w3-container w3-margin">
     <h2>Groups</h2>
-    <ul class="w3-ul w3-card-4 w3-margin w3-padding-left">
+    <table class="w3-table w3-card-4" >
         <% @resource_groupes.each do |groupe| %>
-            <li class="w3-bar">
-                <span class="w3-margin-right w3-padding-right w3-bar-item w3-btn w3-xlarge w3-right w3-round w3-padding-small w3-text-white w3-hover-green">
-                    <i class="w3-xlarge material-icons">edit</i>
-                </span>
+            <tr class="">
+                <td class="w3-left-align w3-xlarge">
+                    <%= groupe.name.titleize %>
+                </td>
+                <td>
+                    <%= groupe.description %>
+                </td>
+                <td class="w3-right-align">
 
-                <span class="w3-margin-right w3-padding-right w3-bar-item w3-btn w3-xlarge w3-right w3-round w3-padding-small w3-text-white w3-hover-red">
-                    <i class="w3-xlarge material-icons">delete</i>
-                </span>
+                    <%= link_to '<i class="w3-large material-icons">delete</i>'.html_safe, 
+                        resources_path(groupe: groupe), 
+                        class: "w3-btn w3-xlarge w3-right w3-round w3-padding w3-text-white w3-hover-red"
+                    %>
 
-                <span class="w3-margin-right w3-padding-right w3-bar-item w3-btn w3-xlarge w3-right w3-round w3-padding-small w3-text-white w3-hover-light-blue">
-                    <i class="w3-xlarge material-icons">view_list</i>
-                </span>
-
-                <div class="w3-bar-item">
-                    <div class="w3-large"><%= groupe.name %></div>
-                    <div><%= groupe.description %></div>
-                </div>
-            </li>
+                    <%= link_to '<i class="w3-large material-icons">edit</i>'.html_safe, 
+                        resources_path(groupe: groupe), 
+                        class: "w3-btn w3-xlarge w3-right w3-round w3-padding w3-text-white w3-hover-light-green"
+                    %>
+                    
+                    <%= link_to '<i class="w3-large material-icons">view_list</i>'.html_safe, 
+                        resources_path(groupe: groupe), 
+                        class: "w3-btn w3-xlarge w3-right w3-round w3-padding w3-text-white w3-hover-light-blue"
+                    %>
+                    
+                    
+                </td>
+            </tr>
         <% end %>
-    </ul>
+    </table>
 </div>
