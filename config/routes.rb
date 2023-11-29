@@ -14,6 +14,10 @@ Rails.application.routes.draw do
 
   get "dashboard" => "main#show"
 
+
+  resources :resource_groupes, only: [ :index ]
+  resources :resources, only: [ :index ]
+
   
   # Defines the root path route ("/")
   root "main#index"

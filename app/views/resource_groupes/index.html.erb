@@ -1,0 +1,30 @@
+<h1 class="w3-container">
+    <i class="w3-xxlarge material-icons">speaker_group</i>
+    Resources
+</h1>
+
+<div class="w3-container w3-margin">
+    <h2>Groups</h2>
+    <ul class="w3-ul w3-card-4 w3-margin w3-padding-left">
+        <% @resource_groupes.each do |groupe| %>
+            <li class="w3-bar">
+                <span class="w3-margin-right w3-padding-right w3-bar-item w3-btn w3-xlarge w3-right w3-round w3-padding-small w3-text-white w3-hover-green">
+                    <i class="w3-xlarge material-icons">edit</i>
+                </span>
+
+                <span class="w3-margin-right w3-padding-right w3-bar-item w3-btn w3-xlarge w3-right w3-round w3-padding-small w3-text-white w3-hover-red">
+                    <i class="w3-xlarge material-icons">delete</i>
+                </span>
+
+                <span class="w3-margin-right w3-padding-right w3-bar-item w3-btn w3-xlarge w3-right w3-round w3-padding-small w3-text-white w3-hover-light-blue">
+                    <i class="w3-xlarge material-icons">view_list</i>
+                </span>
+
+                <div class="w3-bar-item">
+                    <div class="w3-large"><%= groupe.name %></div>
+                    <div><%= groupe.description %></div>
+                </div>
+            </li>
+        <% end %>
+    </ul>
+</div>

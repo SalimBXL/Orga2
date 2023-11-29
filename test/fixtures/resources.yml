@@ -1,13 +1,13 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+valid:
+  name: Resource Name
+  description: MyText
+  service: valid
+  referent: valid
+  groupe: valid
 
-one:
+resource2:
   name: MyString
   description: MyText
-  service: one
-  user: one
-
-two:
-  name: MyString
-  description: MyText
-  service: two
-  user: two
+  service: valid
+  referent: valid
+  groupe: valid

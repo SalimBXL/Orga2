@@ -8,6 +8,9 @@ class MainController < ApplicationController
     def show
         @daysOff = readJsonFile('public/days-off.json')
         @data = readJsonFile('public/data-year.json')
+
+        
+
     end
 
     private

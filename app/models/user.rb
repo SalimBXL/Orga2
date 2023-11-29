@@ -29,5 +29,14 @@ class User < ApplicationRecord
     
     validates :administrator, presence: true
     validates :manager, presence: true
+
+
+    def fullname
+        "#{self.firstname[0].upcase}. #{self.lastname.titleize}"
+    end
+
+    private
+
+    
     
 end

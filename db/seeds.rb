@@ -16,12 +16,12 @@ Location.create(
     address: ""
 )
 Service.create(
-    name: "None",
+    name: "PETScan ULB Erasme",
     comment: "",
     location: Location.last
 )
 Groupe.create(
-    name: "None",
+    name: "Radiophysique",
     comment: ""
 )
 
