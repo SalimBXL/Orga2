@@ -3,7 +3,7 @@ class User < ApplicationRecord
     belongs_to :service
     belongs_to :groupe
 
-    has_many :resources
+    has_many :resources, -> { order(:name) }
 
     
     validates :email, presence: true
@@ -30,6 +30,30 @@ class User < ApplicationRecord
     validates :administrator, presence: true
     validates :manager, presence: true
 
+
+    scope :actives, -> { where(inactive: false) }
+    scope :managers, -> { where(manager: true) }
+
+
+    def resources
+        Resource.where(referent: self)
+    end
+
+    def isManager?
+        self.manager
+    end
+
+    def isAdministrator?
+        self.administrator
+    end
+
+    def isActive?
+        !self.inactive
+    end
+
+    def isInactive?
+        self.inactive
+    end
 
     def fullname
         "#{self.firstname[0].upcase}. #{self.lastname.titleize}"

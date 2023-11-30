@@ -5,9 +5,9 @@ class ResourcesController < ApplicationController
     def index
         if groupe
             @groupe = ResourceGroupe.find(groupe)
-            @resources = Resource.where(groupe: groupe).order(:groupe_id, :service_id, :name)
+            @resources = Resource.here.where(groupe: groupe).order(:groupe_id, :service_id, :name)
         else 
-            @resources = Resource.order(:groupe_id, :service_id, :name)
+            @resources = Resource.here.order(:groupe_id, :service_id, :name)
         end
     end
 
@@ -25,6 +25,6 @@ class ResourcesController < ApplicationController
     end
 
     def find_resource
-        @resource = Resource.find(params[:id])
+        @resource = Resource.here.find(params[:id])
     end
 end
