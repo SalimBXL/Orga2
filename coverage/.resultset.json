@@ -109,6 +109,22 @@
           }
         }
       },
+      "/home/salim/dev/rails/Orga2/app/helpers/resource_groupes_helper.rb": {
+        "lines": [
+          1,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/salim/dev/rails/Orga2/app/helpers/resources_helper.rb": {
+        "lines": [
+          1,
+          null
+        ],
+        "branches": {
+        }
+      },
       "/home/salim/dev/rails/Orga2/app/models/groupe.rb": {
         "lines": [
           1,
@@ -226,6 +242,15 @@
           null,
           1,
           1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          null,
+          null,
           null,
           null
         ],
@@ -466,6 +491,55 @@
         "branches": {
         }
       },
+      "/home/salim/dev/rails/Orga2/app/controllers/resource_groupes_controller.rb": {
+        "lines": [
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/salim/dev/rails/Orga2/app/controllers/resources_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/home/salim/dev/rails/Orga2/app/controllers/sessions_controller.rb": {
         "lines": [
           0,
@@ -541,7 +615,7 @@
         }
       }
     },
-    "timestamp": 1701269127
+    "timestamp": 1701373518
   },
   "Unit Tests": {
     "coverage": {
