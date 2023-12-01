@@ -6,7 +6,5 @@
     <h2 class="w3-center w3-tag  w3-round-large w3-light-blue">
         <%= @groupe.name.titleize if @groupe.present? %>
     </h2>
-    <table class="w3-table w3-card-4" >
-        <%= render @resources %>
-    </table>
+    <%= render(@resources) || "There are no resources yet." %>
 </div>
