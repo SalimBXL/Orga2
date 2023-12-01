@@ -1,0 +1,36 @@
+<tr class="">
+    <td class="w3-left-align w3-large">
+        <%= resource.name.upcase %>
+    </td>
+    <td class="w3-left-align">
+        <%= resource.description %>
+    </td>
+    <td class="w3-left-align">
+        <%= resource.service.name.titleize %>
+    </td>
+    <td class="w3-left-align">
+        <%= link_to resource.referent.fullname, "#" %>
+    </td>
+    <% if @groupe.nil? %>
+        <td class="w3-center">
+            <span class="w3-tag w3-small w3-round-large w3-light-blue"><%= resource.groupe.name %></span>
+        </td>
+    <% end %>
+    <td class="w3-right-align">
+
+        <%= link_to '<i class="w3-large material-icons">delete</i>'.html_safe, 
+            resources_path(), 
+            class: "w3-btn w3-xlarge w3-right w3-round w3-padding w3-text-white w3-hover-red"
+        %>
+
+        <%= link_to '<i class="w3-large material-icons">edit</i>'.html_safe, 
+            resources_path(), 
+            class: "w3-btn w3-xlarge w3-right w3-round w3-padding w3-text-white w3-hover-light-green"
+        %>
+
+        <%= link_to '<i class="w3-large material-icons">view_list</i>'.html_safe, 
+            resources_path(), 
+            class: "w3-btn w3-xlarge w3-right w3-round w3-padding w3-text-white w3-hover-light-blue"
+        %>
+    </td>
+</tr>

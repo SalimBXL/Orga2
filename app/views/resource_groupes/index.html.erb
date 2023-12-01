@@ -1,43 +1,8 @@
 <%= render partial: "header" %>
-
 <div class="w3-container w3-margin">
     <h2>Groups</h2>
-
     <%= render partial: "layouts/add_button", locals: { link: new_resource_groupe_path} %>
-
     <table class="w3-table w3-card-4" >
-        <% @resource_groupes.each do |groupe| %>
-            <tr class="">
-                <td class="w3-left-align w3-xlarge">
-                    <%= groupe.name.titleize %>
-                </td>
-                <td>
-                    <%= groupe.description %>
-                </td>
-                <td class="w3-right-align">
-
-                    <%= link_to '<i class="w3-large material-icons">delete</i>'.html_safe, 
-                        resource_groupe_path(groupe),
-                        data: {
-                            turbo_method: :delete,
-                            turbo_confirm: "You are abotu to delete '#{groupe.name}'. Are you sure ?"
-                        },
-                        class: "w3-btn w3-xlarge w3-right w3-round w3-padding w3-text-white w3-hover-red"
-                    %>
-
-                    <%= link_to '<i class="w3-large material-icons">edit</i>'.html_safe, 
-                        edit_resource_groupe_path(groupe), 
-                        class: "w3-btn w3-xlarge w3-right w3-round w3-padding w3-text-white w3-hover-light-green"
-                    %>
-                    
-                    <%= link_to '<i class="w3-large material-icons">view_list</i>'.html_safe, 
-                        resources_path(groupe: groupe), 
-                        class: "w3-btn w3-xlarge w3-right w3-round w3-padding w3-text-white w3-hover-light-blue"
-                    %>
-                    
-                    
-                </td>
-            </tr>
-        <% end %>
+        <%= render @resource_groupes %>
     </table>
 </div>
