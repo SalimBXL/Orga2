@@ -1,0 +1,16 @@
+
+<% if flash[:notice] %>
+    <div class="w3-round w3-border w3-xlarge w3-margin w3-padding w3-panel w3-pale-yellow w3-text-amber w3-display-container">
+        <span onclick="this.parentElement.style.display='none'"
+        class="w3-button w3-large w3-display-topright">&times;</span>
+        <i class="w3-xxlarge material-icons w3-text-amber">warning</i> <%= flash[:notice] %>
+    </div>
+<% end %>
+
+<% if flash[:alert] %>
+    <div class="w3-round w3-border w3-large w3-margin w3-padding w3-panel w3-pale-red w3-text-red w3-display-container">
+        <span onclick="this.parentElement.style.display='none'"
+        class="w3-button w3-large w3-display-topright">&times;</span>
+        <i class="w3-xlarge material-icons w3-text-red">cancel</i> <%= flash[:alert] %>
+    </div>
+<% end %>

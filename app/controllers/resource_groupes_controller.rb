@@ -31,7 +31,11 @@ class ResourceGroupesController < ApplicationController
     end
 
     def destroy
-        @resource_groupe.destroy
+        unless @resource_groupe.resources.present?
+            @resource_groupe.destroy
+        else 
+            flash[:alert] = "Impossible to delete a groupe with resssources still inside."
+        end
         redirect_to resource_groupes_path
     end
 

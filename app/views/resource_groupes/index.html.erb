@@ -2,5 +2,5 @@
 <div class="w3-container w3-margin">
     <h2>Groups</h2>
     <%= render partial: "layouts/add_button", locals: { link: new_resource_groupe_path} %>
-    <%= render @resource_groupes %>
+    <%= render @resource_groupes || "There are no resource's group yet." %>
 </div>
