@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get "dashboard" => "main#show"
 
 
-  resources :resource_groupes, only: [ :index ]
+  resources :resource_groupes, only: [ :index, :new, :create, :edit, :update, :destroy ]
   resources :resources, only: [ :index, :show ]
 
   
