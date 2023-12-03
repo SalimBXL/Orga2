@@ -1,0 +1,12 @@
+<h1 class="w3-container">
+    <i class="w3-xxlarge material-icons"><%= icon %></i>
+    <%= title %>
+</h1>
+
+<div class="w3-container w3-margin">
+    <h2 class="w3-left"><%= subtitle if defined? subtitle %></h2>
+        <% if defined? link %>
+            <div class="w3-right"><%= render partial: "layouts/add_button", locals: { link: link } %></div>
+        <% end %>
+    </h2>
+</div>

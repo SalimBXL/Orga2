@@ -1,6 +1,13 @@
-<%= render partial: "header" %>
+<%= render partial: "layouts/header", 
+    locals: { 
+        title: "Resources", 
+        icon: "speaker_group", 
+        link: new_resource_groupe_path, 
+        subtitle: "Groups"
+    }
+%>
 <div class="w3-container w3-margin">
-    <h2>Groups</h2>
-    <%= render partial: "layouts/add_button", locals: { link: new_resource_groupe_path} %>
-    <%= render @resource_groupes || "There are no resource's group yet." %>
+    <table class="w3-table w3-card-4 w3-margin w3-round" >
+        <%= render @resource_groupes || "There are no resource's group yet." %>
+    </table>
 </div>

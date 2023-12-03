@@ -34,6 +34,8 @@ class User < ApplicationRecord
     scope :actives, -> { where(inactive: false) }
     scope :managers, -> { where(manager: true) }
 
+    scope :here, -> { where(service: Current.user.service) }
+
 
     def resources
         Resource.where(referent: self)
@@ -57,6 +59,10 @@ class User < ApplicationRecord
 
     def fullname
         "#{self.firstname[0].upcase}. #{self.lastname.titleize}"
+    end
+
+    def completeFullname
+        "#{self.firstname.titleize} #{self.lastname.titleize}"
     end
 
     private

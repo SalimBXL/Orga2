@@ -1,10 +1,13 @@
-<h1 class="w3-container">
-    <i class="w3-xxlarge material-icons">speaker_group</i>
-    Resources
-</h1>
+<%= render partial: "layouts/header", 
+    locals: { 
+        title: "Resources", 
+        icon: "speaker_group", 
+        link: new_resource_path, 
+        subtitle: @groupe&.name&.titleize || nil
+    }
+%>
 <div class="w3-container w3-margin">
-    <h2 class="w3-center w3-tag  w3-round-large w3-light-blue">
-        <%= @groupe.name.titleize if @groupe.present? %>
-    </h2>
-    <%= render(@resources) || "There are no resources yet." %>
+    <table class="w3-table w3-card-4 w3-margin w3-round" >
+        <%= render(@resources) || "There are no resources yet." %>
+    </table>
 </div>

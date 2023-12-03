@@ -1,5 +1,5 @@
 class ResourceGroupesController < ApplicationController
-    before_action :authenticate_user!, only: [:index, :new, :create, :edit, :update, :destroy]
+    before_action :authenticate_user!
     before_action :find_resource_groupe, only: [:edit, :update, :destroy]
 
     def index
@@ -39,13 +39,14 @@ class ResourceGroupesController < ApplicationController
         redirect_to resource_groupes_path
     end
 
+
     private
 
-    def resource_groupe_params
-        params.require(:resource_groupe).permit(:name, :description)
-    end
+        def resource_groupe_params
+            params.require(:resource_groupe).permit(:name, :description)
+        end
 
-    def find_resource_groupe
-        @resource_groupe = ResourceGroupe.find(params[:id])
-    end
+        def find_resource_groupe
+            @resource_groupe = ResourceGroupe.find(params[:id])
+        end
 end
