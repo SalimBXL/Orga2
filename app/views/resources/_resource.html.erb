@@ -9,11 +9,11 @@
         <%= resource.service.name.titleize %>
     </td>
     <td class="w3-left-align">
-        <%= link_to resource.referent.fullname, "#" %>
+        <%= link_to resource.referent.fullname, resources_path(referent: resource.referent), title: "View this user referent's resources" %>
     </td>
     <% if @groupe.nil? %>
         <td class="w3-center">
-            <span class="w3-tag w3-small w3-round-large w3-light-blue"><%= resource.groupe.name %></span>
+            <%= link_to resource.groupe.name, resources_path(groupe: resource.groupe), class: "w3-tag w3-small w3-round-large w3-light-blue", title: "View this group's resources" %>
         </td>
     <% end %>
     <td class="w3-right-align">
@@ -24,12 +24,14 @@
                 turbo_method: :delete,
                 turbo_confirm: "You are about to delete '#{resource.name}'. Are you sure ?"
             },
-            class: "w3-btn w3-xlarge w3-right w3-round w3-padding w3-text-white w3-hover-red"
+            class: "w3-btn w3-xlarge w3-right w3-round w3-padding w3-text-white w3-hover-red",
+            title: "Delete"
         %>
 
         <%= link_to '<i class="w3-large material-icons">edit</i>'.html_safe, 
             edit_resource_path(resource), 
-            class: "w3-btn w3-xlarge w3-right w3-round w3-padding w3-text-white w3-hover-light-green"
+            class: "w3-btn w3-xlarge w3-right w3-round w3-padding w3-text-white w3-hover-light-green",
+            title: "Edit"
         %>
 
     </td>

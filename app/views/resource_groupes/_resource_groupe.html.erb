@@ -12,15 +12,18 @@
                 turbo_method: :delete,
                 turbo_confirm: "You are about to delete '#{resource_groupe.name}'. Are you sure ?"
             },
-            class: "w3-btn w3-xlarge w3-right w3-round w3-padding w3-text-white w3-hover-red"
+            class: "w3-btn w3-xlarge w3-right w3-round w3-padding w3-text-white w3-hover-red",
+            title: "Delete"
         %>
         <%= link_to '<i class="w3-large material-icons">edit</i>'.html_safe, 
             edit_resource_groupe_path(resource_groupe), 
-            class: "w3-btn w3-xlarge w3-right w3-round w3-padding w3-text-white w3-hover-light-green"
+            class: "w3-btn w3-xlarge w3-right w3-round w3-padding w3-text-white w3-hover-light-green",
+            title: "Edit"
         %>
         <%= link_to '<i class="w3-large material-icons">view_list</i>'.html_safe, 
             resources_path(groupe: resource_groupe), 
-            class: "w3-btn w3-xlarge w3-right w3-round w3-padding w3-text-white w3-hover-light-blue"
+            class: "w3-btn w3-xlarge w3-right w3-round w3-padding w3-text-white w3-hover-light-blue",
+            title: "View resources for #{resource_groupe.name}"
         %>
     </td>
 </tr>

@@ -8,4 +8,7 @@ class Resource < ApplicationRecord
   normalizes :name, with: ->(name) {name.strip.titleize}
 
   scope :here, -> { where(service: Current.user.service) }
+  scope :for_referent, -> (ref) { where(referent: ref).order(:name) }
+  scope :for_groupe, -> (gr) { where(groupe: gr).order(:name) }
+
 end

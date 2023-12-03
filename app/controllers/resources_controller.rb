@@ -3,11 +3,10 @@ class ResourcesController < ApplicationController
     before_action :find_resource, only: [:edit, :update, :destroy]
 
     def index
-        if groupe
-            @groupe = ResourceGroupe.find(groupe)
-            @resources = Resource.here.where(groupe: groupe).order(:groupe_id, :service_id, :name)
-        else 
-            @resources = Resource.here.order(:name)
+        @groupe = ResourceGroupe.find(groupe) if groupe.present?
+        @resources = Resource.here.for_groupe(groupe) if groupe.present?
+        @resources = Resource.here.for_referent(current_user) if referent.present?
+        @resources = Resource.here.order(:name) if groupe.nil? and unless nil.present?
         end
     end
 
@@ -49,6 +48,10 @@ class ResourcesController < ApplicationController
 
         def groupe
             params[:groupe] || nil
+        end
+
+        def referent
+            params[:referent] || nil
         end
 
         def find_resource
