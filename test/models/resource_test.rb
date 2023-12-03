@@ -19,4 +19,17 @@ class ResourceTest < ActiveSupport::TestCase
     resource2.name = @resource.name
     refute resource2.valid?, "Valid with an existing name."
   end
+
+  test "Should find resources for a referent" do
+    referent = users(:valid)
+    res = Resource.for_referent(referent).count
+    assert_equal res, 2, "Didnt find the resources for a referent"
+  end
+
+  test "Should find resources for a group" do
+    groupe = resource_groupes(:valid)
+    res = Resource.for_groupe(groupe).count
+    assert_equal res, 2, "Didnt find the resources for a groupe"
+  end
+
 end

@@ -6,8 +6,7 @@ class ResourcesController < ApplicationController
         @groupe = ResourceGroupe.find(groupe) if groupe.present?
         @resources = Resource.here.for_groupe(groupe) if groupe.present?
         @resources = Resource.here.for_referent(current_user) if referent.present?
-        @resources = Resource.here.order(:name) if groupe.nil? and unless nil.present?
-        end
+        @resources = Resource.here.order(:name) if (groupe.nil? and referent.nil?)
     end
 
     def new

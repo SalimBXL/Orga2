@@ -2,10 +2,11 @@ require "test_helper"
 
 class CurrentTest < ActiveSupport::TestCase
 
-  def setup
-  end
-
   test "Valid current" do
     assert true
+  end
+
+  test "Attribute exists" do
+    Current.user
   end
 end

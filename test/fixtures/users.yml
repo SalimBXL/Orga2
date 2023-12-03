@@ -15,10 +15,10 @@ valid:
 another:
   email: another@email.com
   password_digest: BCrypt::Password.create("password")
-  firstname: Prenom
-  lastname: Nom de famille
-  administrator: true
-  manager: true
+  firstname: Prenom2
+  lastname: Nom de famille2
+  administrator: false
+  manager: false
   phone_office: "51234"
   phone_home: "+32"
   groupe: valid
@@ -26,3 +26,16 @@ another:
   inactive: false
   last_connection: 2023_11_01 12:00:00
 
+one_inactive:
+  email: anotherEmail@email.com
+  password_digest: BCrypt::Password.create("password")
+  firstname: Prenom
+  lastname: Nom de famille
+  administrator: false
+  manager: false
+  phone_office: "51234"
+  phone_home: "+32"
+  groupe: valid
+  service: valid
+  inactive: true
+  last_connection: 2023_11_01 12:00:00
