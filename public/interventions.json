@@ -1,0 +1,27 @@
+{
+    "next": { 
+        "date": "2023-12-06", 
+        "name": "Maintenance"
+    },
+    "scheduled": [
+        { "date": "2023-12-20", "name": "Maintenance" },
+        { "date": "2023-12-19", "name": "Maintenance" },
+        { "date": "2023-12-12", "name": "Maintenance" },
+        { "date": "2023-12-08", "name": "Maintenance" },
+        { "date": "2023-12-06", "name": "Maintenance" },
+        { "date": "2023-12-05", "name": "Maintenance" }
+    ],
+    "done": [
+        { "date": "2023-04-10", "name": "Maintenance"},
+        { "date": "2023-04-10", "name": "Maintenance"},
+        { "date": "2023-04-10", "name": "Maintenance"},
+        { "date": "2023-04-10", "name": "Maintenance"},
+        { "date": "2023-04-10", "name": "Maintenance"},
+        { "date": "2023-04-10", "name": "Maintenance"},
+        { "date": "2023-04-10", "name": "Maintenance"},
+        { "date": "2023-04-10", "name": "Maintenance"},
+        { "date": "2023-04-10", "name": "Maintenance"},
+        { "date": "2023-04-10", "name": "Maintenance"},
+        { "date": "2023-04-10", "name": "Maintenance"}
+    ]
+}

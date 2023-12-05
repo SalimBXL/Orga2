@@ -10,6 +10,7 @@ class ResourcesController < ApplicationController
     end
 
     def show
+        @intervs = readJsonFile('public/interventions.json')
     end
 
     def new

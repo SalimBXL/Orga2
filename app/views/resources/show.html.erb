@@ -4,43 +4,50 @@
         icon: "speaker_group"
     }
 %>
-<div class="w3-container w3-center">
-<div style="max-width:400px; margin-top: 100px;", class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin w3-round w3-padding">
-    <header class="w3-container w3-text-blue">
-        <div class="w3-container">
-            <h2 class="w3-text-blue w3-left"><%= @resource.name %></h2>
-            <div class="w3-left w3-text-blue"><%= @resource.service.name %></div>
+
+<div style="max-width:400px;">
+    <div class="w3-card-4 w3-light-grey w3-text-blue w3-margin w3-round w3-padding">
+        <div class="w3-container w3-border w3-margin-top">
+            <small class="w3-text-blue w3-left"><em class="w3-text-blue"><%= @resource.service.name %></em></small>
+            <div class="w3-right w3-tag w3-light-blue w3-round w3-text-white w3-small"><%= @resource.groupe.name %></div><br />
+            <small class="w3-text-blue w3-left"><%= @resource.referent.completeFullname %></small><br />
+            
+            
+            <h2 class="w3-text-blue w3-center"><%= @resource.name %></h2>
+            
+            <div class="w3-text-blue"><%= @resource.description %></div>
+            
+            <% if @intervs.next.date.to_date < 15.days.from_now %>
+                <footer class="w3-panel w3-pink w3-card-4 w3-margin w3-center w3-round">    
+                    <%= getDateFrenchFormatedWithDayName @intervs.next.date.to_date %> <br />
+                    <%= @intervs.next.name %>
+                </footer>
+            <% end %>
         </div>
-        <div class="w3-container w3-margin w3-text-blue w3-left"><%= @resource.description %></div>
-    </header>
-
-    <div class="w3-panel w3-pink w3-card-4 w3-margin w3-center">
-        <p>Next intervention : xx nnn xxxx</p>
     </div>
 
-    <div class="w3-container w3-center w3-text-blue w3-margin-bottom w3-padding">
-        
-        <% 3.times do %>
-            <p class="w3-text-blue w3-text-green">"xxxxxx"</p>
-        <% end %>
+    <div class="w3-card-4 w3-light-grey w3-text-blue w3-margin w3-round w3-padding">
+        <table class="w3-table-all w3-border w3-margin-top">
+            <tr><th class="w3-text-blue">Interventions</th><th></th></tr>
+            
+            <% @intervs.scheduled.each do |interv| %>
+                <% interv_date = interv.date.to_date %>
+                <tr>
+                    <% clr = "blue" %>
+                    <% clr = "green" if interv_date < 8.days.from_now %>
+                    <% clr = "red" if interv_date < 3.days.from_now %>
+                    <% clr = "purple" if interv_date == Date.today %>
+                    <td class="w3-text-<%= clr %>"><%= interv.date %></td>
+                    <td class="w3-text-<%= clr %>"><%= interv.name %></td>
+                </tr>
+            <% end %>
 
-        <% 2.times do %>
-            <p class="w3-text-blue w3-text-orange">"xxxxxx"</p>
-        <% end %>
-
-        <% 1.times do %>
-            <p class="w3-text-blue w3-text-red w3-large">"xxxxxx"</p>
-        <% end %>
-
-        <% 9.times do %>
-            <p class="w3-text-blue w3-text-grey">"xxxxxx"</p>
-        <% end %>
-        
+            <% @intervs.done.each do |interv| %>
+                <tr>
+                    <td class="w3-text-grey"><%= interv.date %></td>
+                    <td class="w3-text-grey"><%= interv.name %></td>
+                </tr>
+            <% end %>
+        </table>
     </div>
-
-    <footer class="w3-container w3-text-blue">
-        <div class="w3-tag w3-light-blue w3-round w3-text-white w3-small w3-margin w3-left"><%= @resource.groupe.name %></div>
-        <div class="w3-right w3-text-blue"><%= @resource.referent.completeFullname %></div>
-    </footer>
-</div>
 </div>
