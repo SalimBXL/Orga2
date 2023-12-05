@@ -74,5 +74,85 @@
             "code": "co", 
             "valide": false
         }
+    },
+    "2023-12-04": { 
+        "date": "2023-12-04", 
+        "job": {
+            "am": {
+                "code": []
+            },
+            "pm": {
+                "code": []
+            },
+            "mission": false
+        }, 
+        "absence": {
+            "code": "co", 
+            "valide": true
+        }
+    },
+    "2023-12-05": { 
+        "date": "2023-12-05", 
+        "job": {
+            "am": {
+                "code": []
+            },
+            "pm": {
+                "code": []
+            },
+            "mission": false
+        }, 
+        "absence": {
+            "code": "co", 
+            "valide": true
+        }
+    },
+    "2023-12-06": { 
+        "date": "2023-12-06", 
+        "job": {
+            "am": {
+                "code": ["Réu"]
+            },
+            "pm": {
+                "code": ["Misc"]
+            },
+            "mission": false
+        }, 
+        "absence": {
+            "code": "", 
+            "valide": false
+        }
+    },
+    "2023-12-07": { 
+        "date": "2023-12-07", 
+        "job": {
+            "am": {
+                "code": ["SPM"]
+            },
+            "pm": {
+                "code": []
+            },
+            "mission": false
+        }, 
+        "absence": {
+            "code": "", 
+            "valide": false
+        }
+    },
+    "2023-12-08": { 
+        "date": "2023-12-08", 
+        "job": {
+            "am": {
+                "code": []
+            },
+            "pm": {
+                "code": []
+            },
+            "mission": false
+        }, 
+        "absence": {
+            "code": "co", 
+            "valide": true
+        }
     }
 }
