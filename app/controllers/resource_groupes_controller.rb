@@ -1,5 +1,4 @@
 class ResourceGroupesController < ApplicationController
-    before_action :authenticate_user!
     before_action :find_resource_groupe, only: [:edit, :update, :destroy]
 
     def index

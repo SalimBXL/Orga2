@@ -1,7 +1,6 @@
-<% if current_user.present? %>
+
     <div class="welcome-subtitle">
-        <div>Welcome <%= current_user.firstname %></div>
+        <div>Welcome </div>
         <div class="not-mobile"><%= getDateFrenchFormated(Time.now) %></div>
     </div>
     <%= render "main/dashboard/dashboard" %>
-<% end %>

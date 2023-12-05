@@ -1,5 +1,4 @@
 class ResourcesController < ApplicationController
-    before_action :authenticate_user!
     before_action :find_resource, only: [:edit, :update, :destroy, :show]
 
     def index

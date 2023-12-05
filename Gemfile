@@ -76,3 +76,5 @@ group :test do
   # Salim
   gem 'simplecov'
 end
+
+gem "devise", "~> 4.9"

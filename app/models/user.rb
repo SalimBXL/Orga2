@@ -1,5 +1,11 @@
 class User < ApplicationRecord
-    has_secure_password
+    enum role: [:regular, :admin]
+    
+    # Include default devise modules. Others available are:
+    # :confirmable, :lockable, :timeoutable and :omniauthable
+    devise :database_authenticatable, :trackable, :registerable,
+            :recoverable, :rememberable, :validatable
+
     belongs_to :service
     belongs_to :groupe
 
@@ -16,20 +22,8 @@ class User < ApplicationRecord
     validates :lastname, presence: true
     normalizes :lastname, with: ->(lastname) {lastname.strip.titleize}
 
-    generates_token_for :password_reset, expires_in: 15.minutes do
-        password_salt&.last(10)
-    end
-
-    generates_token_for :email_confirmation, expires_in: 24.hours do
-        email
-    end
-
     validates :groupe, presence: true
     validates :service, presence: true
-    
-    validates :administrator, presence: true
-    validates :manager, presence: true
-
 
     scope :actives, -> { where(inactive: false) }
     scope :managers, -> { where(manager: true) }
@@ -41,19 +35,15 @@ class User < ApplicationRecord
         Resource.where(referent: self)
     end
 
-    def isManager?
+    def manager?
         self.manager
     end
 
-    def isAdministrator?
-        self.administrator
-    end
-
-    def isActive?
+    def active?
         !self.inactive
     end
 
-    def isInactive?
+    def inactive?
         self.inactive
     end
 

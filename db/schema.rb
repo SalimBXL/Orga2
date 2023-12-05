@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_28_095726) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_05_211009) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -35,6 +35,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_28_095726) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_resource_groupes_on_name", unique: true
   end
 
   create_table "resources", force: :cascade do |t|
@@ -46,6 +47,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_28_095726) do
     t.bigint "referent_id", null: false
     t.bigint "groupe_id", null: false
     t.index ["groupe_id"], name: "index_resources_on_groupe_id"
+    t.index ["name"], name: "index_resources_on_name", unique: true
     t.index ["referent_id"], name: "index_resources_on_referent_id"
     t.index ["service_id"], name: "index_resources_on_service_id"
   end
@@ -60,22 +62,30 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_28_095726) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email", null: false
-    t.string "password_digest", null: false
     t.string "firstname", null: false
     t.string "lastname", null: false
     t.bigint "groupe_id", null: false
     t.bigint "service_id", null: false
-    t.boolean "administrator", default: false, null: false
-    t.boolean "manager", default: false, null: false
     t.string "phone_office"
     t.string "phone_home"
+    t.boolean "manager", default: false, null: false
     t.boolean "inactive", default: false, null: false
-    t.datetime "last_connection", precision: nil
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.integer "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["groupe_id"], name: "index_users_on_groupe_id"
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["service_id"], name: "index_users_on_service_id"
   end
 

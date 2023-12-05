@@ -25,20 +25,6 @@ Groupe.create(
     comment: ""
 )
 
-# Création du profil Admin
-User.create(
-    email: "anthony.joly@hubruxelles.be",
-    firstname: "Salim a.",
-    lastname: "Joly",
-    password: "password",
-    password_confirmation: "password",
-    service: Service.last,
-    groupe: Groupe.last,
-    administrator: true,
-    manager: true
-)
-
-
 # Création de resources
 ResourceGroupe.create(
     name: "Activity meter",
@@ -69,4 +55,37 @@ Resource.create(
     service: Service.last,
     referent: User.last,
     groupe: ResourceGroupe.last
+)
+Resource.create(
+    name: "StarGuide",
+    description: "SPECT-CT",
+    service: Service.last,
+    referent: User.last,
+    groupe: ResourceGroupe.last
+)
+
+
+user_regular = User.where(email: "regular@user").first_or_initialize
+user_regular.update!(
+    role: :regular,
+    password: "password",
+    password_confirmation: "password",
+    firstname: "Regular",
+    lastname: "User",
+    service: Service.last,
+    groupe: Groupe.last,
+    manager: false
+)
+
+# Création du profil Admin
+user_admin = User.where(email: "admin@user").first_or_initialize
+user_admin.update!(
+    role: :admin,
+    password: "password",
+    password_confirmation: "password",
+    firstname: "Admin",
+    lastname: "Administrator",
+    service: Service.last,
+    groupe: Groupe.last,
+    manager: true
 )
