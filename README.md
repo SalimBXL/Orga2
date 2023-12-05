@@ -27,13 +27,15 @@ rails db:create db:migrate db:seed
 ### Configuration
 To run correctly the database, you need to configure it by creating an ***.env*** file with all parameters.
 ```
-touch .env
-echo "DATABASE_PROD_NAME: orga2-prod" >> .env
-echo "DATABASE_DEV_NAME: orga2-dev" >> .env
-echo "DATABASE_TEST_NAME: orga2-test" >> .env
-echo "DATABASE_PORT: 5432" >> .env
-echo "DATABASE_USERNAME: <your-username>" >> .env
-echo "DATABASE_PASSWORD: <your-password>" >> .env
+touch .env.yml
+echo "ORGA2_PROD_NAME: 'orga2_prod'" >> .env.yml
+echo "ORGA2_DEV_NAME: 'orga2_dev'" >> .env.yml
+echo "ORGA2_TEST_NAME: 'orga2_test'" >> .env.yml
+echo "ORGA2_PORT: '5432'" >> .env.yml
+echo "ORGA2_HOST: ''" >> .env.yml
+echo "ORGA2_USERNAME: <your-username>" >> .env.yml
+echo "ORGA2_PASSWORD: <your-password>" >> .env.yml
+echo "SECRET_KEY_BASE: 'orga'" >> .env.yml
 ```
 
 
