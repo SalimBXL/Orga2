@@ -4,9 +4,10 @@
     <% color = "grey" if (color == "light-grey" || color.nil?) %>
     <% dataDay = @data[getDateFormated(dateOfTheDay)] %>
     <% formatedDateOfTheDay = getDateFrenchFormatedWithDayName(dateOfTheDay) %>
+    <% codes = Hash.new %>
+    <% codes[:am] = [""] %>
+    <% codes[:pm] = [""] %>
     <% if dataDay %>
-        <% codes = Hash.new %>
-        <% codes[:am] = [""] %><% codes[:pm] = [""] %>
         <% codes[:am] = dataDay.job.am.code if dataDay.job.am.code.length > 0 %>
         <% codes[:pm] = dataDay.job.pm.code if dataDay.job.pm.code.length > 0 %>
     <% end %>
