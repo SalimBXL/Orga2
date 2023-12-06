@@ -58,6 +58,7 @@ rails server -b <server-ip> -p <your-open-port> -e production
 
 ### Licence
 <TODO>
+// [#40](https://github.com/SalimBXL/Orga2/issues/40)TODO: Wich license ?
 
 
 ### Thanks
