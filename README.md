@@ -73,3 +73,5 @@ rails server -b <server-ip> -p <your-open-port> -e production
 ### Badges
 <TODO>
 `[![Build Status](lien-vers-votre-build-status-badge)](lien-vers-votre-projet)`
+
+To be continued...
